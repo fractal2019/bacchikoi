@@ -76,3 +76,5 @@ gem 'jquery-rails', '4.3.1'
 #devise
 gem 'devise'
 
+#ransack
+gem 'ransack'
