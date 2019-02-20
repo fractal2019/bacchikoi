@@ -63,14 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 
-
-
-gem 'kaminari-bootstrap', '~> 3.0.1'
-
-
-
-gem 'kaminari', '~> 0.17.0'
-
 # original
 
 #bootstrap
@@ -82,11 +74,12 @@ gem 'devise'
 
 #ransack
 gem 'ransack'
+#kaminari
 
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
 
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
-
-
 
 
