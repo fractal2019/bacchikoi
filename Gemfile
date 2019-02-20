@@ -62,6 +62,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
+gem 'kaminari-bootstrap', '~> 0.17.0'
+
+
 gem 'kaminari', '~> 0.17.0'
 
 # original
@@ -72,4 +75,9 @@ gem 'jquery-rails', '4.3.1'
 
 #devise
 gem 'devise'
+
+#ransack
+gem 'ransack'
+
+gem "refile", require: "refile/rails", github: 'manfe/refile'
 
