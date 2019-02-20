@@ -62,6 +62,16 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "kakurenbo-puti"
+
+
+
+
+gem 'kaminari-bootstrap', '~> 3.0.1'
+
+
+
+gem 'kaminari', '~> 0.17.0'
+
 # original
 
 #bootstrap
@@ -70,3 +80,14 @@ gem 'jquery-rails', '4.3.1'
 
 #devise
 gem 'devise'
+
+#ransack
+gem 'ransack'
+
+
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
+
+
+
+
