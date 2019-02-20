@@ -33,7 +33,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # t.datetime :locked_at
 
 
-
+      t.datetime :deleted_at
       t.integer :tel
       t.string :postal_code
       t.string :address
