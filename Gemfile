@@ -83,8 +83,10 @@ gem 'devise'
 #ransack
 gem 'ransack'
 
-
+#refile関係
 gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
+
 
 
 
