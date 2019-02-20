@@ -62,10 +62,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
-gem 'kaminari-bootstrap', '~> 3.0.1'
 
-
-gem 'kaminari', '~> 0.17.0'
 
 # original
 
@@ -78,3 +75,8 @@ gem 'devise'
 
 #ransack
 gem 'ransack'
+
+#kaminari
+
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
