@@ -13,6 +13,123 @@
  *= require_tree .
  *= require_self
  */
-  @import "bootstrap-sprockets";
-  @import "bootstrap";
 
+ @import "bootstrap";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*ヘッダー関連*/
+.nav-title a {
+	content: #FFF;
+	text-align: center;
+}
+.nav-menu {
+	max-width: 800px;
+    text-align: center;
+    margin: 0 auto 1rem auto;
+}
+
+.nav-list {
+	width: 33%;
+	display: block;
+	float: left;
+	padding: .75rem 1.25rem;
+	border: 1px solid rgba(0,0,0,.125);
+}
+.nav-list img {
+	width: 50%;
+	height: 40%;
+	max-width: 40px;
+	max-height:40px;
+	margin-bottom: 3px;
+}
+.nav-text {
+	color: #231815;
+}
+
+
+/*全体*/
+li {
+	list-style: none;
+}
+.hr {
+    height: 1px;
+    overflow: hidden;
+    background: #ccc;
+    margin: 3px 0;
+}
+
+/*タブ切り替え*/
+.cp_tab *, .cp_tab *:before, .cp_tab *:after {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.cp_tab {
+	margin: 1em auto;
+}
+.cp_tab > input[type='radio'] {
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	background: none;
+	-webkit-appearance: none;
+	        appearance: none;
+	display: none;
+}
+.cp_tab .cp_tabpanel {
+	display: none;
+}
+.cp_tab > input:first-child:checked ~ .cp_tabpanels > .cp_tabpanel:first-child,
+.cp_tab > input:nth-child(3):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(2),
+.cp_tab > input:nth-child(5):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(3),
+.cp_tab > input:nth-child(7):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(4),
+.cp_tab > input:nth-child(9):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(5),
+.cp_tab > input:nth-child(11):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(6) {
+	display: block;
+}
+.cp_tab > label {
+	position: relative;
+	display: inline-block;
+	padding: 15px;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-bottom: 0;
+    width: 49%;
+    border-radius: 6px 6px 0 0;
+    text-align: center;;
+}
+.cp_tab > label:hover,
+.cp_tab > input:focus + label {
+	color: #0066cc;
+}
+.cp_tab > input:checked + label {
+	margin-bottom: -1px;
+	border-color: #cccccc;
+	border-bottom: 1px solid #ffffff;/*背景色と同じ*/
+	border-radius: 6px 6px 0 0;
+	width: 50%;
+	text-align: center;
+}
+.cp_tab .cp_tabpanel {
+	padding: 0 1em;
+}
+@media (max-width: 480px) {
+	.cp_tab {
+		width: 100%;
+		font-size: 0.8em;
+	}
+	.cp_tab label {
+		padding: 0.5em;
+	}
+}

@@ -1,0 +1,234 @@
+<%= render 'layouts/header' %>
+
+<div class="container" style="max-width: 800px;">
+<p>ようこそ、徳川家康様</p>
+
+<div class="input-group col-12 mb-3">
+	<input type="text" class="form-control" placeholder="曲・アーティストを探す">
+	<span class="input-group-btn">
+		<button type="submit" class="btn btn-outline-secondary">検索</button>
+	</span>
+</div>
+
+<div class="card border-secondary my-3 p-3">
+	<ul class="ml-5">
+		<li>名前：徳川家康</li>
+		<li>名前（カタカナ）：トクガワイエヤス</li>
+		<li>メールアドレス：tokugawa@gmail.com</li>
+		<li>郵便番号：117-0981</li>
+		<li>住所：愛知県岡崎市康生町 岡崎城</li>
+		<li>電話番号：090-1234-5678</li>
+		<li>パスワード：******</li>
+	</ul>
+	<div class="col-12">
+	    <div class="mx-auto text-center">
+	    	<button type="button" class="btn btn-warning btn-lg"><a href="#">編集する</a></button>
+
+	    	<!-- モーダル --
+	    	!-- ボタン --
+			<button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#demoNormalModal">一括変更</button>
+
+			!-- モーダルダイアログ --
+			<div class="modal fade" id="demoNormalModal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+			    <div class="modal-dialog" role="document">
+			        <div class="modal-content">
+			            <div class="modal-header">
+			                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			                    <span aria-hidden="true">&times;</span>
+			                </button>
+			            </div>
+			            <div class="modal-body">本当に変更しますか？</div>
+			            <div class="modal-footer">
+			                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+			                <button type="button" class="btn btn-primary">更新する</button>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			 --
+			 !-- modal fade --
+			!-- モーダル -->
+	    </div>
+	</div><!-- col-12 -->
+</div>
+
+<div class="card p-3 table-responsive">
+	<table class="table table-bordered my-3"">
+		<tr>
+		<th>購入者</th>
+		<td>徳川家康</td>
+		</tr>
+		<tr>
+		<th>購入日</th>
+		<td>2019/05/21 14:30</td>
+		</tr>
+		<tr>
+		<th>購入内容</th>
+		<td>
+			<ul>
+				<li>クリスマスソング</li>
+				<li>購入枚数：1枚</li>
+				<li class="text-right">小計：2,980円</li>
+				<div class="hr my-3"><hr></div>
+				<li class="text-right">合計金額：2,980円</li>
+			</ul>
+		</tr>
+		<tr>
+		<th>送付先</th>
+		<td>愛知県岡崎市康生町 岡崎城</td>
+		</tr>
+		<tr>
+		<th>ステータス</th>
+		<td>
+			<!-- プログレスバー -->
+			<div class="progress my-1">
+			  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">受付</div>
+
+			  <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">商品準備中</div>
+
+			  <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">出荷済</div>
+
+			  <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">キャンセル</div>
+			</div>
+			<!-- プログレスバー -->
+			<div class="col-12">その他：</div>
+		</td>
+		</tr>
+	</table>
+
+<!-- 以降繰り返し -->
+	<table class="table table-bordered my-3"">
+		<tr>
+		<th>購入者</th>
+		<td>徳川家康</td>
+		</tr>
+		<tr>
+		<th>購入日</th>
+		<td>2019/05/21 14:30</td>
+		</tr>
+		<tr>
+		<th>購入内容</th>
+		<td>
+			<ul>
+				<li>クリスマスソング</li>
+				<li>購入枚数：1枚</li>
+				<li class="text-right">小計：2,980円</li>
+				<div class="hr my-3"><hr></div>
+				<li class="text-right">合計金額：2,980円</li>
+			</ul>
+		</tr>
+		<tr>
+		<th>送付先</th>
+		<td>愛知県岡崎市康生町 岡崎城</td>
+		</tr>
+		<tr>
+		<th>ステータス</th>
+		<td>
+			<!-- プログレスバー -->
+			<div class="progress my-1">
+			  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 33%" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">受付</div>
+
+			  <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width: 33%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="33">商品準備中</div>
+
+			  <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 33%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="33">出荷済</div>
+
+			  <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">キャンセル</div>
+			</div>
+			<!-- プログレスバー -->
+			<div class="col-12">その他：</div>
+		</td>
+		</tr>
+	</table>
+
+	<table class="table table-bordered my-3"">
+		<tr>
+		<th>購入者</th>
+		<td>徳川家康</td>
+		</tr>
+		<tr>
+		<th>購入日</th>
+		<td>2019/05/21 14:30</td>
+		</tr>
+		<tr>
+		<th>購入内容</th>
+		<td>
+			<ul>
+				<li>クリスマスソング</li>
+				<li>購入枚数：1枚</li>
+				<li class="text-right">小計：2,980円</li>
+				<div class="hr my-3"><hr></div>
+				<li class="text-right">合計金額：2,980円</li>
+			</ul>
+		</tr>
+		<tr>
+		<th>送付先</th>
+		<td>愛知県岡崎市康生町 岡崎城</td>
+		</tr>
+		<tr>
+		<th>ステータス</th>
+		<td>
+			<!-- プログレスバー -->
+			<div class="progress my-1">
+			  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">受付</div>
+
+			  <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">商品準備中</div>
+
+			  <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">出荷済</div>
+
+			  <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">キャンセル</div>
+			</div>
+			<!-- プログレスバー -->
+			<div class="col-12">その他：</div>
+		</td>
+		</tr>
+	</table>
+
+	<table class="table table-bordered my-3"">
+		<tr>
+		<th>購入者</th>
+		<td>徳川家康</td>
+		</tr>
+		<tr>
+		<th>購入日</th>
+		<td>2019/05/21 14:30</td>
+		</tr>
+		<tr>
+		<th>購入内容</th>
+		<td>
+			<ul>
+				<li>クリスマスソング</li>
+				<li>購入枚数：1枚</li>
+				<li class="text-right">小計：2,980円</li>
+				<div class="hr my-3"><hr></div>
+				<li class="text-right">合計金額：2,980円</li>
+			</ul>
+		</tr>
+		<tr>
+		<th>送付先</th>
+		<td>愛知県岡崎市康生町 岡崎城</td>
+		</tr>
+		<tr>
+		<th>ステータス</th>
+		<td>
+			<!-- プログレスバー -->
+			<div class="progress my-1">
+			  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">受付</div>
+
+			  <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">商品準備中</div>
+
+			  <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">出荷済</div>
+
+			  <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">キャンセル</div>
+			</div>
+			<!-- プログレスバー -->
+			<div class="col-12">その他：</div>
+		</td>
+		</tr>
+	</table>
+<!-- 繰り返しここまで -->
+</div><!-- card p-3 table-responsive -->
+</div><!-- container -->
+
+<footer class="footer mt-3 p-2 bg-warning text-light">
+  <div class="col-12 text-center">©︎inflatop.inc</div>
+</footer>
