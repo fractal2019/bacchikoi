@@ -15,6 +15,14 @@
  */
 
  @import "bootstrap";
+ @import "admins_products.scss";
+ @import "admins_users.scss";
+ @import "carts";
+ @import "products";
+ @import "purchase_histories";
+
+
+admins_products.scss
 
 * {
   margin: 0;
