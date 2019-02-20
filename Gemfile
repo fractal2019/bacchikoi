@@ -79,4 +79,4 @@ gem 'ransack'
 #kaminari
 
 gem 'kaminari'
-gem 'bootstrap-kaminari-views'
+gem 'bootstrap4-kaminari-views'
