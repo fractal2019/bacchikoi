@@ -1,48 +1,50 @@
-<h2>会員登録</h2>
-
+<h2 class="text-center mx-auto pt-5 pb-3">会員登録</h2>
+<hr>
+<div class="container px-5">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :名前 %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="field mt-3">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "名前(姓名)" %>
   </div>
-  <div class="field">
+
+  <div class="field mt-1">
+    <%= f.text_field :name_kana, autocomplete: "name_kana", placeholder: "名前(セイメイ)" %>
+  </div>
+
+  <div class="field mt-4">
+    <%= f.label :postal_code %><br />
+    <%= f.text_field :postal_code, placeholder: "（例）000-0000" %>
+  </div>
+
+  <div class="field mt-4">
+    <%= f.label :address %><br />
+    <%= f.text_field :address, placeholder: "住所" %>
+  </div>
+
+  <div class="field mt-4">
+    <%= f.label :tel %><br />
+    <%= f.telephone_field :tel, placeholder: "（例）000-0000-0000" %>
+  </div>
+
+  <div class="field mt-4">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, placeholder: "（例）XXX@XXX.com" %>
   </div>
 
-  <div class="field">
-    <%= f.label :郵便番号 %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :住所 %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :電話番号 %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :メールアドレス %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :パスワード %>
+  <div class="field mt-4">
+    <%= f.label :password %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "会員登録" %>
+    <%= f.submit "会員登録", class: "btn btn-primary btn-block my-3 py-3" %>
   </div>
 <% end %>
 
-アカウントをお持ちの方は<%= render "devise/shared/links" %>
+<p class="text-right">アカウントをお持ちの方は<%= render "devise/shared/links" %></p>
+</div>
