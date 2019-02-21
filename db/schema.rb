@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_21_045645) do
+ActiveRecord::Schema.define(version: 2019_02_21_053418) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -129,6 +129,12 @@ ActiveRecord::Schema.define(version: 2019_02_21_045645) do
     t.string "postal_code"
     t.string "address"
     t.string "name_kana"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.string "name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
