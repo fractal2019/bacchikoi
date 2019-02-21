@@ -17,6 +17,7 @@
  @import "carts";
  @import "products";
  @import "purchase_histories";
+ @import "users";
 
 
 admins_products.scss
@@ -30,6 +31,10 @@ admins_products.scss
   content: "";
   display: block;
   clear: both;
+}
+
+.container {
+	max-width: 800px;
 }
 
 /*ヘッダー関連*/

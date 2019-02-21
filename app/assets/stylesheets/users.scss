@@ -2,3 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+input[type="text"] {
+        width: 80%;
+        height: 30px;
+}
+
+input[type="tel"] {
+        width: 80%;
+        height: 30px;
+}
+
+input[type="password"] {
+        width: 80%;
+        height: 30px;
+}
+
+input[type="email"] {
+        width: 80%;
+        height: 30px;
+}
