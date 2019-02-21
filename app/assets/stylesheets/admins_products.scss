@@ -1,3 +1,8 @@
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
 .box{
 	border-style: groove;
 	height: 300px;
@@ -30,7 +35,7 @@
 }
 .box2{
 	border-style: groove;
-	height: 100px;
+	height: 120px;
 	margin-bottom: 30px;
 	padding: 10px;
 }
@@ -58,3 +63,6 @@
 	margin-bottom: 30px;
 	padding: 10px;
 }
+.link_top{
+ 	text-align: center;
+ }
