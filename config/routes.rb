@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :admins
+  get "admins/top"
   get 'users/show'
   get 'products/search'
   get 'products/show'
