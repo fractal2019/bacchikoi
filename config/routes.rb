@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   devise_for :admins
+  get 'users/show'
+  get 'products/search'
+  get 'products/show'
+  get 'carts/index'
   get 'admins_users/index'
   get 'admins_users/show'
   get 'admins_users/edit'
