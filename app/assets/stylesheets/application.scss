@@ -10,13 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
-
  @import "bootstrap";
- @import "admins_products.scss";
- @import "admins_users.scss";
+ @import "admins_products";
+ @import "admins_users";
  @import "carts";
  @import "products";
  @import "purchase_histories";
