@@ -6,6 +6,7 @@ class AdminsProductsController < ApplicationController
   end
 
   def show
+  	@poduct = Poduct.find(params[:id])
   end
 
   def edit

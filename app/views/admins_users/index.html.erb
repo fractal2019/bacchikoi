@@ -41,12 +41,12 @@
 						<div class="addresses-box"><%= user.address %></div>
 					</div>
 					<div class="btn-group-vertical" style="margin: -140px 11px 60px 498px;" role="group">
-					<button type="button" style="padding: 6px 20px; background-color: red;
-					margin-bottom: 10px;" class="btn page-link text-dark d-inline-block">購入履歴</button>
-					<button type="button" style="padding: 6px 20px; background-color: green;
-					margin-bottom: 10px;" class="btn page-link text-dark d-inline-block">編集</button>
-					<button type="button" style="padding: 6px 20px; background-color: blue;
-					margin-bottom: 10px;" class="btn page-link text-dark d-inline-block">削除</button>
+					<%=  link_to purchase_history_path(user.id) do %><button type="button" style="padding: 6px 20px; background-color: red;
+					margin-bottom: 10px;" class="btn page-link text-dark d-inline-block">購入履歴</button> <% end %>
+					<%= link_to admins_users_edit(user.id) do %><button type="button" style="padding: 6px 20px; background-color: green;
+					margin-bottom: 10px;" class="btn page-link text-dark d-inline-block">編集</button> <% end %>
+					<%=  link_to admins_users_path(user.id), method: :delete do %><button type="button" style="padding: 6px 20px; background-color: blue;
+					margin-bottom: 10px;" class="btn page-link text-dark d-inline-block">削除</button> <% end %>
 					</div>
 				</div>
 				<% end %>
