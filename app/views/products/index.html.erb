@@ -1,0 +1,87 @@
+<%= render 'layouts/header' %>
+
+<div class="container">
+<%= render 'layouts/serch_contents' %>
+
+
+<div class="text-center"><img src="usertop_index_image.jpg" class="img-fluid" alt="Responsive image"></div>
+
+<!-- 下記はカラオケ人気曲順です -->
+<h2 class="mt-4">カラオケ人気曲ランキング</h2>
+<div class="card p-3">
+  <div class="row pl-2">1位：曲名／アーティスト名</div>
+  <div class="row pl-2">2位：曲名／アーティスト名</div>
+  <div class="row pl-2">3位：曲名／アーティスト名</div>
+  <div class="row pl-2">4位：曲名／アーティスト名</div>
+  <div class="row pl-2">5位：曲名／アーティスト名</div>
+</div>
+
+<!-- 下記は歌いやすい曲ランキングベスト５（ベタ打ち？）です。 -->
+<div class="ranking">
+  <h3 class="mt-4">20代男性が歌いやすいカラオケ曲ベスト5</h3>
+  <div class="row mb-2 p-3 box">
+      <div class="col-4">
+        <div class="mx-auto text-center">CDシングル</div>
+        <div class="box-jacket"><%= image_tag 'test.jpg'%></div>
+      </div>
+      <div class="col-8 mt-3">
+        <div class="box-song"><a href="#">クリスマスソング</a></div>
+        <div class="hr my-1"><hr></div>
+        <div class="box-artist"><a href="#">バックナンバー</a></div>
+        <div class="hr my-1"><hr></div>
+        <div class="box-price">価格（税込）：¥2,980</div>
+        <div class="hr my-1"><hr></div>
+        <div class="box-stock">在庫状況：在庫あり</div>
+        <div class="mx-auto text-center">
+          <button type="button" class="btn btn-warning mt-3">カートに入れる</button>
+        </div>
+      </div>
+    </div><!-- row mb-2 p-3 box -->
+
+    <!-- 以降は繰り返し -->
+    <div class="row mb-2 p-3 box">
+      <div class="col-4">
+        <div class="mx-auto text-center">CDシングル</div>
+        <div class="box-jacket"><%= image_tag 'test.jpg'%></div>
+      </div>
+      <div class="col-8 mt-3">
+        <div class="box-song"><a href="#">クリスマスソング</a></div>
+        <div class="hr my-1"><hr></div>
+        <div class="box-artist"><a href="#">バックナンバー</a></div>
+        <div class="hr my-1"><hr></div>
+        <div class="box-price">価格（税込）：¥2,980</div>
+        <div class="hr my-1"><hr></div>
+        <div class="box-stock">在庫状況：在庫あり</div>
+        <div class="mx-auto text-center">
+          <button type="button" class="btn btn-warning mt-3">カートに入れる</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2 p-3 box">
+      <div class="col-4">
+        <div class="mx-auto text-center">CDシングル</div>
+        <div class="box-jacket"><%= image_tag 'test.jpg'%></div>
+      </div>
+      <div class="col-8 mt-3">
+        <div class="box-song"><a href="#">クリスマスソング</a></div>
+        <div class="hr my-1"><hr></div>
+        <div class="box-artist"><a href="#">バックナンバー</a></div>
+        <div class="hr my-1"><hr></div>
+        <div class="box-price">価格（税込）：¥2,980</div>
+        <div class="hr my-1"><hr></div>
+        <div class="box-stock">在庫状況：在庫あり</div>
+        <div class="mx-auto text-center">
+          <button type="button" class="btn btn-warning mt-3">カートに入れる</button>
+        </div>
+      </div>
+    </div>
+
+  <!-- 繰り返しここまで -->
+</div><!-- ranking -->
+
+</div><!-- container -->
+
+<footer class="footer mt-3 p-2 bg-warning text-light">
+  <div class="col-12 text-center">©︎inflatop.inc</div>
+</footer>
