@@ -1,14 +1,14 @@
-<h2 class="text-center mx-auto pt-5 pb-3">ログイン</h2>
+<h2 class="text-center mx-auto pt-5 pb-3">管理者用ログイン</h2>
 <hr>
 
 <div class="container px-5">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field my-5">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "管理者メールアドレス" %>
   </div>
 
   <div class="field my-5">
-    <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード" %>
+    <%= f.password_field :password, autocomplete: "current-password", placeholder: "管理者パスワード" %>
   </div>
 
   <div class="actions">
@@ -18,5 +18,4 @@
   </div>
 <% end %>
 
-<p class="text-right">新規登録する方は<%= render "devise/shared/links" %></p>
 </div>
