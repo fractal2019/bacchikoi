@@ -5,32 +5,9 @@
 
 <ul class="nav-menu clearfix">
 <% if user_signed_in? %>
-  <!-- 未ログイン時 -->
-	<%= link_to new_user_registration_path , class: 'nav-text' do  %>
-	  <li class="nav-list">
-	  <%= image_tag 'cart.png' %>
-	  <br>カート
-	  </li>
-	<% end %>
-
-	<%= link_to new_user_session_path , class: 'nav-text' do  %>
-	  <li class="nav-list">
-	  <%= image_tag 'login.png' %>
-	  <br>ログイン
-	  </li>
-	<% end %>
-
-	<%= link_to new_user_registration_path , class: 'nav-text' do  %>
-	  <li class="nav-list">
-	  <%= image_tag 'mypage.png' %>
-	  <br>新規登録
-	  </li>
-	<% end %>
-</ul>
-
-<% else %>
   <!-- ログイン時 -->
-  	<%= link_to new_user_registration_path , class: 'nav-text' do  %>
+	<!-- ユーザーの会員登録ページに遷移 -->
+	<%= link_to new_user_registration_path , class: 'nav-text' do  %>
 	  <li class="nav-list">
 	  <%= image_tag 'cart.png' %>
 	  <br>カート
@@ -48,6 +25,31 @@
 	  <li class="nav-list">
 	  <%= image_tag 'mypage.png' %>
 	  <br>マイページ
+	  </li>
+	<% end %>
+</ul>
+
+<% else %>
+  <!-- 未ログイン時 -->
+  	<!-- ユーザーのカート内ページに遷移 -->
+  	<%= link_to new_user_registration_path , class: 'nav-text' do  %>
+	  <li class="nav-list">
+	  <%= image_tag 'cart.png' %>
+	  <br>カート
+	  </li>
+	<% end %>
+
+	<%= link_to new_user_session_path , class: 'nav-text' do  %>
+	  <li class="nav-list">
+	  <%= image_tag 'login.png' %>
+	  <br>ログイン
+	  </li>
+	<% end %>
+
+	<%= link_to new_user_registration_path , class: 'nav-text' do  %>
+	  <li class="nav-list">
+	  <%= image_tag 'mypage.png' %>
+	  <br>新規登録
 	  </li>
 	<% end %>
 

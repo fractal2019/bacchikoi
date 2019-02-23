@@ -7,31 +7,31 @@
 
   <div class="field mt-3">
     <label for="name">名前</label><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "名前(姓名)", class: "name" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "名前(姓名)", class: "pl-2", id: "name" %>
   </div>
 
   <div class="field mt-1">
-    <%= f.text_field :name_kana, autocomplete: "name_kana", placeholder: "名前(セイメイ)" %>
+    <%= f.text_field :name_kana, autocomplete: "name_kana", placeholder: "名前(セイメイ)", class: "pl-2", id: "name_kana" %>
   </div>
 
   <div class="field mt-4">
     <label for="postal_code">郵便番号</label><br />
-    <%= f.text_field :postal_code, placeholder: "（例）000-0000" %>
+    <%= f.text_field :postal_code, placeholder: "（例）000-0000", class: "pl-2", id: "postal_code" %>
   </div>
 
   <div class="field mt-4">
     <label for="address">住所</label><br />
-    <%= f.text_field :address, placeholder: "住所" %>
+    <%= f.text_field :address, placeholder: "住所", class: "pl-2", id: "address" %>
   </div>
 
   <div class="field mt-4">
     <label for="tel">電話番号</label><br />
-    <%= f.telephone_field :tel, placeholder: "（例）000-0000-0000" %>
+    <%= f.telephone_field :tel, placeholder: "（例）000-0000-0000", class: "pl-2", id: "tel" %>
   </div>
 
   <div class="field mt-4">
     <label for="email">メールアドレス</label><br />
-    <%= f.email_field :email, placeholder: "（例）XXX@XXX.com" %>
+    <%= f.email_field :email, placeholder: "（例）XXX@XXX.com", class: "pl-2", id: "email" %>
   </div>
 
   <div class="field mt-4">
@@ -39,7 +39,7 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class: "pl-2", id: "password" %>
   </div>
 
   <div class="actions">
