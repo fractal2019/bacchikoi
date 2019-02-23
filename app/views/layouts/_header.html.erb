@@ -1,12 +1,55 @@
 <header>
-  <nav class="bg-warning sticky-top p-2 text-center"><a class="text-light" href="#">カラオケばっちこい！</a></nav>
+  <nav class="bg-warning sticky-top p-2 text-center">
+  	<%= link_to 'カラオケばっちこい！' ,carts_index_path , class: "text-light" %>
 </header>
-<!-- 未ログイン時 -->
+
 <ul class="nav-menu clearfix">
-  <a href="#" class="nav-text"><li class="nav-list"><%= image_tag 'cart.png'%><br>カート</li></a>
-  <a href="#" class="nav-text"><li class="nav-list"><%= image_tag 'login.png'%><br>ログイン</li></a>
-  <a href="#" class="nav-text"><li class="nav-list"><%= image_tag 'mypage.png'%><br>新規登録</li></a>
-  <!-- ログイン時
-  <a href="#" class="nav-text"><li class="nav-list"><%= image_tag 'mypage.png'%><br>マイページ</li></a>
- -->
+<% if user_signed_in? %>
+  <!-- 未ログイン時 -->
+	<%= link_to new_user_registration_path , class: 'nav-text' do  %>
+	  <li class="nav-list">
+	  <%= image_tag 'cart.png' %>
+	  <br>カート
+	  </li>
+	<% end %>
+
+	<%= link_to new_user_session_path , class: 'nav-text' do  %>
+	  <li class="nav-list">
+	  <%= image_tag 'login.png' %>
+	  <br>ログイン
+	  </li>
+	<% end %>
+
+	<%= link_to new_user_registration_path , class: 'nav-text' do  %>
+	  <li class="nav-list">
+	  <%= image_tag 'mypage.png' %>
+	  <br>新規登録
+	  </li>
+	<% end %>
 </ul>
+
+<% else %>
+  <!-- ログイン時 -->
+  	<%= link_to new_user_registration_path , class: 'nav-text' do  %>
+	  <li class="nav-list">
+	  <%= image_tag 'cart.png' %>
+	  <br>カート
+	  </li>
+	<% end %>
+
+	<%= link_to new_user_registration_path , class: 'nav-text' do  %>
+	  <li class="nav-list">
+	  <%= image_tag 'logout.png' %>
+	  <br>ログアウト
+	  </li>
+	<% end %>
+
+	<%= link_to new_user_registration_path , class: 'nav-text' do  %>
+	  <li class="nav-list">
+	  <%= image_tag 'mypage.png' %>
+	  <br>マイページ
+	  </li>
+	<% end %>
+
+</ul>
+<% end %>
