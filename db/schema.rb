@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_20_100131) do
+ActiveRecord::Schema.define(version: 2019_02_23_075236) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -79,6 +79,8 @@ ActiveRecord::Schema.define(version: 2019_02_20_100131) do
     t.text "staff_coment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "product_name"
+    t.index ["product_name"], name: "index_products_on_product_name"
   end
 
   create_table "purchase_contents", force: :cascade do |t|
@@ -128,11 +130,11 @@ ActiveRecord::Schema.define(version: 2019_02_20_100131) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.datetime "deleted_at"
-    t.string "tel"
-    t.string "postal_code"
-    t.text "address"
-    t.string "name_kana"
-    t.string "name"
+    t.string "tel", null: false
+    t.string "postal_code", null: false
+    t.text "address", null: false
+    t.string "name_kana", null: false
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
