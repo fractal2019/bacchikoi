@@ -26,7 +26,7 @@
 						</div>
 					</div>
 					<div class="product-content-box">
-						<p>アルバム名<%= @product.id %></p>
+						<p>アルバム名<%= @product.product_name %></p>
 						<p>アーティスト名
 							<%= @product.discs[0].songs[0].artists[0].artist_name %></p>
 						<p><%= @product.price %>価格（税込み）</p>
@@ -37,28 +37,30 @@
 					</div>
 				</div>
 				<div class="box2">
-					<p>ジャンル名<%= genre_name %></p>
-					<p>レーベル<%= disc_name %></p>
+					<p>ジャンル名<%=  %></p>
+					<p>レーベル<%= @product.label_name %></p>
 				</div>
-				<!-- <%# @books.each do |book| %> -->
+				<% @product.discs.each do |disc| %>
 				<div class="song-name-box">
 					<table>
-						<h3>Disc1</h3>
+						<h3><%= disc.disc_name %></h3>
 						<tbody>
-							<!-- <%# @books.each do |book| %> -->
+							<% disc.songs.each do |song| %>
 							<tr>
-								<td>曲名</td>
+								<td><%= song.song_name %></td>
 							</tr>
+							<% end %>
 						</tbody>
 					</table>
 				</div>
+				<% end %>
 				<div class="product-content-box2">
 					<p>商品詳細</p>
-    				<!-- <%#= f.text_field :book_title, class: "book_title" %> -->
+    				<%= @product.product_introduction %>
 				</div>
 				<div class="staff-comment">
 					<h5>スタッフコメント</h5>
-					<!-- <%#= f.text_field :book_title, class: "book_title" %> -->
+					<%= @product.staff_comment %>
 				</div>
 			</div>
 		</div>

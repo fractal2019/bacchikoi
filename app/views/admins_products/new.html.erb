@@ -4,45 +4,27 @@
 <div class="text-center mx-auto my-4">
   <button type="button" class="btn btn-lg btn-primary">管理者トップページへ</button>
 </div>
-
-
-
-<%= form_for do |f| %>  -->
-
 <%= form_for(@admins_product) do |f| %>
-
 <h3>商品の新規追加</h3>
 <div class="card p-3">
   <div class="form-group">
-
-  	<%= f.label :File %>
-  	<!-- <%#= attachment_image_tag book.user, :image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg", :size =>"50x50" %> -->画像
-    <input type="file" class="form-control-file" id="File">
-
-    <label for="File">ジャケット画像<%= f.attachment_field :jacket_image %></label>
+    <label for="File">ジャケット画像</label>
     <%= f.attachment_field :jacket_image %>
-
   </div>
 
   <div class="form-group">
-  	<%= f.label :シングル名/アルバム名 %>
-    <!-- <label for="inputDiscs">シングル名/アルバム名</label> -->
-    <%= f.text_field :disc_name %>
-    <!-- <input type="text" class="form-control" id="inputDiscs" placeholder="ここにシングル/アルバム名を記入"> -->
+    <label for="inputDiscs">シングル名/アルバム名</label>
+    <%= <%= f.text_field :product_name %> %>
   </div>
 
   <div class="form-group">
-  	<%= f.label : アーティスト名%>
-    <!-- <label for="inputArtists">アーティスト名</label> -->
-    <%= f.text_field :artist_name %>
-    <!-- <input type="text" class="form-control" id="inputArtists" placeholder="ここにアーティスト名を記入"> -->
+    <label for="inputArtists">アーティスト名</label>
+    <input type="text" class="form-control" id="inputArtists" placeholder="ここにアーティスト名を記入">
   </div>
 
   <div class="form-group">
-  	<%= f.label : 価格　%>
-    <!-- <label for="inputPrice">価格</label> -->
+    <label for="inputPrice">価格</label>
     <div class="input-group">
-      
       <input type="text" class="form-control col-2" id="inputPrice">
       <div class="ml-2">円</div>
     </div>
@@ -63,10 +45,6 @@
   </div>
 
   <div class="form-group">
-    <label for="inputRelease">発売日</label>
-    <input type="text" class="form-control col-4" id="inputRelease" placeholder="ここに発売日を記入">
-  </div>
-
   <div>ジャンル</div>
   <div class="form-check form-check-inline">
     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
