@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :purchase_histories, dependent: :destroy
+  has_one :cart
+
 soft_deletable
   
   # Deviseを使うと、問答無用でemailがユニーク扱いになる。
@@ -24,6 +27,5 @@ soft_deletable
   def self.find_for_authentication(warden_conditions)
     without_soft_destroyed.where(email: warden_conditions[:email]).first
   end
-
 
 end
