@@ -1,21 +1,20 @@
 <%= render 'layouts/header' %>
 
 <div class="container">
-<%= render 'layouts/serch_contents' %>
+<%= render 'layouts/serch_contents', user: @user %>
 
 <div class="card border-secondary my-3 p-3">
 	<ul class="ml-5">
-		<li>名前：徳川家康</li>
-		<li>名前（カタカナ）：トクガワイエヤス</li>
-		<li>メールアドレス：tokugawa@gmail.com</li>
-		<li>郵便番号：117-0981</li>
-		<li>住所：愛知県岡崎市康生町 岡崎城</li>
-		<li>電話番号：090-1234-5678</li>
-		<li>パスワード：******</li>
+		<li>名前：<%= @user.name %></li>
+		<li>名前（カタカナ）：<%= @user.name_kana %></li>
+		<li>メールアドレス：<%= @user.email %></li>
+		<li>郵便番号：<%= @user.postal_code %></li>
+		<li>住所：<%= @user.address %></li>
+		<li>電話番号：<%= @user.tel %></li>
+		<li>パスワード：<%= @user.password %></li>
 	</ul>
-	<div class="col-12">
-	    <div class="mx-auto text-center">
-	    	<button type="button" class="btn btn-warning btn-lg"><a href="#">編集する</a></button>
+	<div class="mx-auto text-center col-8">
+		<%= link_to "編集する", edit_user_path(current_user.id) ,class: "btn btn-warning btn-lg" %>
 
 	    	<!-- モーダル --
 	    	!-- ボタン --
@@ -41,9 +40,8 @@
 			 --
 			 !-- modal fade --
 			!-- モーダル -->
-	    </div>
-	</div><!-- col-12 -->
-</div>
+	</div><!-- mx-auto text-center col-8 -->
+</div><!-- card border-secondary my-3 p-3 -->
 
 <div class="card p-3 table-responsive">
 	<table class="table table-bordered my-3"">
