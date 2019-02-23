@@ -4,13 +4,12 @@
 <div class="text-center mx-auto my-4">
   <button type="button" class="btn btn-lg btn-primary">管理者トップページへ</button>
 </div>
-
+<%= form_for(@admins_product) do |f| %>
 <h3>商品の新規追加</h3>
 <div class="card p-3">
-<form>
   <div class="form-group">
-    <label for="File">ジャケット画像</label>
-    <input type="file" class="form-control-file" id="File">
+    <label for="File">ジャケット画像<%= f.attachment_field :jacket_image %></label>
+    <%= f.attachment_field :jacket_image %>
   </div>
 
   <div class="form-group">
@@ -101,8 +100,5 @@
   <div class="text-center mx-auto my-3">
     <button type="submit" class="btn btn-lg btn-primary">新規登録する</button>
   </div>
-
-</form>
-
 </div><!-- card -->
-
+<% end %>

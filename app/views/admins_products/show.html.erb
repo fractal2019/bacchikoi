@@ -22,23 +22,23 @@
 							[CD]シングル
 						</div>
 						<div class="jacket-jpg">
-							<!-- <%#= attachment_image_tag book.user, :image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg", :size =>"50x50" %> -->画像
+							<%= attachment_image_tag @product.jacket_image_id, :image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg", :size =>"50x50" %>画像
 						</div>
 					</div>
 					<div class="product-content-box">
-						<p>アルバム名<!-- <%#= disc_name %> --></p>
-						<p>アーティスト名<!-- <%#= disc_name %> --></p>
-						<p><!-- <%#= disc_name %> -->価格（税込み）</p>
-						<p>在庫状況<!-- <%#= disc_name %> --></p>
-						<!-- <%#= link_to user_path(current_user),  class: "home" do %> --><button type="button" class="btn page-link text-dark d-inline-block btn-lg center-block">
+						<p>アルバム名<%= @product.id %></p>
+						<p>アーティスト名
+							<%= @product.discs[0].songs[0].artists[0].artist_name %></p>
+						<p><%= @product.price %>価格（税込み）</p>
+						<p>在庫状況<%= @product.number_of_stock %></p>
+						<%= link_to edit_admins_product_path(@product.id) do %><button type="button" class="btn page-link text-dark d-inline-block btn-lg center-block">
 						<p style="margin: 0;" class="text-primary">編集する</p>
-						</button><!-- <%# end %> -->
+						</button><% end %>
 					</div>
 				</div>
 				<div class="box2">
-					<p>発売日<!-- <%#= disc_name %> --></p>
-					<p>ジャンル名<!-- <%#= disc_name %> --></p>
-					<p>レーベル<!-- <%#= disc_name %> --></p>
+					<p>ジャンル名<%= genre_name %></p>
+					<p>レーベル<%= disc_name %></p>
 				</div>
 				<!-- <%# @books.each do |book| %> -->
 				<div class="song-name-box">
