@@ -1,6 +1,6 @@
 <header>
   <nav class="bg-warning sticky-top p-2 text-center">
-  	<%= link_to 'カラオケばっちこい！' ,carts_index_path , class: "text-light" %>
+  	<%= link_to 'カラオケばっちこい！' ,root_path , class: "text-light" %>
 </header>
 
 <ul class="nav-menu clearfix">
@@ -14,14 +14,14 @@
 	  </li>
 	<% end %>
 
-	<%= link_to new_user_registration_path , class: 'nav-text' do  %>
+	<%= link_to destroy_user_session_path, method: :delete , class: 'nav-text' do  %>
 	  <li class="nav-list">
 	  <%= image_tag 'logout.png' %>
 	  <br>ログアウト
 	  </li>
 	<% end %>
 
-	<%= link_to new_user_registration_path , class: 'nav-text' do  %>
+	<%= link_to user_path(current_user.id) , class: 'nav-text' do  %>
 	  <li class="nav-list">
 	  <%= image_tag 'mypage.png' %>
 	  <br>マイページ
