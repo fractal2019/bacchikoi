@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'products#index'
   devise_for :admins
   get "admins/top"
-  get 'users/show'
+  get "users/:id" => "users#show"
   get 'products/search'
   get 'products/show'
   get 'carts/index'
