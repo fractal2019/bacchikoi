@@ -15,27 +15,27 @@
   </div>
 
   <div class="field mt-4">
-    <label for="name">郵便番号</label><br />
+    <label for="postal_code">郵便番号</label><br />
     <%= f.text_field :postal_code, placeholder: "（例）000-0000" %>
   </div>
 
   <div class="field mt-4">
-    <label for="name">住所</label><br />
+    <label for="address">住所</label><br />
     <%= f.text_field :address, placeholder: "住所" %>
   </div>
 
   <div class="field mt-4">
-    <label for="name">電話番号</label><br />
+    <label for="tel">電話番号</label><br />
     <%= f.telephone_field :tel, placeholder: "（例）000-0000-0000" %>
   </div>
 
   <div class="field mt-4">
-    <label for="name">メールアドレス</label><br />
+    <label for="email">メールアドレス</label><br />
     <%= f.email_field :email, placeholder: "（例）XXX@XXX.com" %>
   </div>
 
   <div class="field mt-4">
-    <label for="name">パスワード</label>
+    <label for="password">パスワード</label>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
