@@ -9,16 +9,3 @@
 </div> -->
 
 
-<div class="input-group col-12 mb-3">
-            <%= search_form_for @q, url: search_path do |f| %>
-              <%= f.label :price_cont %>
-              <%= f.search_field :price_cont %>
-              <%= f.submit %>
-            <% end %>
-
-            <% if params[:q].present? && params[:q][:price_cont].present? %>
-              Search name: <%= params[:q][:price_cont] %>
-            <% end %>
-
-
-</div>
