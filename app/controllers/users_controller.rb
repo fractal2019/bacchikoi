@@ -17,6 +17,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @q = Product.ransack(params[:q])
+    @products = @q.result(distinct: true)
   end
 
   def update
