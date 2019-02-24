@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   root 'products#index'
   devise_for :admins
-  root :to => 'products#toppage'
   get "admins/top"
-  get 'products/search'
+  get 'products/search' => "products#search", as: "search"
   get 'products/show'
   get 'carts/index'
   devise_for :users
