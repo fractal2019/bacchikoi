@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 2019_02_23_075236) do
     t.integer "type_name"
     t.integer "price"
     t.integer "number_of_stock"
-    t.integer "label_id"
+    t.integer "lebel_id"
     t.datetime "deleted_at"
     t.text "product_introduction"
     t.text "staff_coment"
@@ -130,11 +130,11 @@ ActiveRecord::Schema.define(version: 2019_02_23_075236) do
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
     t.datetime "deleted_at"
-    t.string "tel", null: false
-    t.string "postal_code", null: false
-    t.text "address", null: false
-    t.string "name_kana", null: false
-    t.string "name", null: false
+    t.string "tel"
+    t.string "postal_code"
+    t.text "address"
+    t.string "name_kana"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
