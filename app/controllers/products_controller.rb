@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
 
+  def index
+  end
 
 # def index
 #   @q = Person.ransack(params[:q])
@@ -7,8 +9,8 @@ class ProductsController < ApplicationController
 # end
 
   def index
-  @q = Product.ransack(params[:q])
-  @products = @q.result(distinct: true)
+  	@q = Product.ransack(params[:q])
+  	@products = @q.result(distinct: true)
   end
 
 

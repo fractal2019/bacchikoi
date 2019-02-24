@@ -22,43 +22,45 @@
 							[CD]シングル
 						</div>
 						<div class="jacket-jpg">
-							<!-- <%#= attachment_image_tag book.user, :image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg", :size =>"50x50" %> -->画像
+							<%= attachment_image_tag @product.jacket_image_id, :image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg", :size =>"50x50" %>画像
 						</div>
 					</div>
 					<div class="product-content-box">
-						<p>アルバム名<!-- <%#= disc_name %> --></p>
-						<p>アーティスト名<!-- <%#= disc_name %> --></p>
-						<p><!-- <%#= disc_name %> -->価格（税込み）</p>
-						<p>在庫状況<!-- <%#= disc_name %> --></p>
-						<!-- <%#= link_to user_path(current_user),  class: "home" do %> --><button type="button" class="btn page-link text-dark d-inline-block btn-lg center-block">
+						<p>アルバム名<%= @product.product_name %></p>
+						<p>アーティスト名
+							<%= @product.discs[0].songs[0].artists[0].artist_name %></p>
+						<p><%= @product.price %>価格（税込み）</p>
+						<p>在庫状況<%= @product.number_of_stock %></p>
+						<%= link_to edit_admins_product_path(@product.id) do %><button type="button" class="btn page-link text-dark d-inline-block btn-lg center-block">
 						<p style="margin: 0;" class="text-primary">編集する</p>
-						</button><!-- <%# end %> -->
+						</button><% end %>
 					</div>
 				</div>
 				<div class="box2">
-					<p>発売日<!-- <%#= disc_name %> --></p>
-					<p>ジャンル名<!-- <%#= disc_name %> --></p>
-					<p>レーベル<!-- <%#= disc_name %> --></p>
+					<p>ジャンル名<%=  %></p>
+					<p>レーベル<%= @product.label_name %></p>
 				</div>
-				<!-- <%# @books.each do |book| %> -->
+				<% @product.discs.each do |disc| %>
 				<div class="song-name-box">
 					<table>
-						<h3>Disc1</h3>
+						<h3><%= disc.disc_name %></h3>
 						<tbody>
-							<!-- <%# @books.each do |book| %> -->
+							<% disc.songs.each do |song| %>
 							<tr>
-								<td>曲名</td>
+								<td><%= song.song_name %></td>
 							</tr>
+							<% end %>
 						</tbody>
 					</table>
 				</div>
+				<% end %>
 				<div class="product-content-box2">
 					<p>商品詳細</p>
-    				<!-- <%#= f.text_field :book_title, class: "book_title" %> -->
+    				<%= @product.product_introduction %>
 				</div>
 				<div class="staff-comment">
 					<h5>スタッフコメント</h5>
-					<!-- <%#= f.text_field :book_title, class: "book_title" %> -->
+					<%= @product.staff_comment %>
 				</div>
 			</div>
 		</div>

@@ -9,10 +9,12 @@ class AdminsProductsController < ApplicationController
   def create
   	admins_product = Product.new(product_params)
   	admins_product.save
+  	redirect_to admins_product_path
   end
 
 
   def show
+  	@poduct = Poduct.find(params[:id])
   end
 
   def edit
