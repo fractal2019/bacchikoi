@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_one :cart
 
 soft_deletable
-  
+
   # Deviseを使うと、問答無用でemailがユニーク扱いになる。
   # それだと論理削除した際に再登録できないので、一旦emailに関する検証を削除する
   # https://gist.github.com/brenes/4503386
@@ -18,7 +18,7 @@ soft_deletable
       callback.raw_filter.attributes.delete :email
     end
   end
-  
+
   # emailのバリデーションを定義し直す
   validates :email, presence: true
   validates_format_of :email, with: Devise.email_regexp, if: :email_changed?
