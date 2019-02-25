@@ -7,6 +7,12 @@ class User < ApplicationRecord
   has_many :purchase_histories, dependent: :destroy
   has_one :cart
 
+  validates :name, presence: true, length: { minimum: 2, maximum: 30 }
+  validates :name_kana, presence: true, format: {with: /\A([ァ-ン]|ー)+\z/, :message =>'はカタカナで入力して下さい。'}
+  validates :postal_code, presence: true, format: {with: /\A\d{3}[-]\d{4}$|^\d{3}[-]\d{2}$|^\d{3}\z/, :message =>'は有効でありません。'}
+  validates :address, presence: true
+  validates :tel, presence: true, format: {with: /\A[0-9]{3}-[0-9]{4}-[0-9]{4}\z/, :message =>'は有効でありません。'}
+
 # soft_deletable
 
 #   # Deviseを使うと、問答無用でemailがユニーク扱いになる。
