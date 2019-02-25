@@ -1,6 +1,8 @@
 class Product < ApplicationRecord
+	# 下記２行cocoon記述
+	has_many :discs, inverse_of: :product
+	accepts_nested_attributes_for :discs, reject_if: :all_blank, allow_destroy: true
 
-	has_many :discs
 	has_many :jackets
 	has_many :purchase_contents
   

@@ -1,8 +1,13 @@
 <%= render 'layouts/header' %>
 
 <div class="container">
-<%= render 'layouts/serch_contents' %>
-<p>木下様のカート内</p>
+<% if user_signed_in? %>
+  <p>ようこそ、<%= current_user.name %> 様</p>
+<% else %>
+  <p>ようこそ、ゲスト様</p>
+<% end %>
+
+<p><%= current_user.name %> 様<のカート内</p>
 <div class="row my-2 mx-1 p-3 box">
 	<div class="col-4">
 		<div class="box-jacket">
