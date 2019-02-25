@@ -13,7 +13,6 @@ class User < ApplicationRecord
   validates :address, presence: true
   validates :tel, presence: true, format: {with: /\A[0-9]{3}-[0-9]{4}-[0-9]{4}\z/, :message =>'は有効でありません。'}
 
-
 # soft_deletable
 
 #   # Deviseを使うと、問答無用でemailがユニーク扱いになる。
