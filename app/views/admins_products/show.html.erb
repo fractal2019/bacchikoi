@@ -22,13 +22,13 @@
 							[CD]シングル
 						</div>
 						<div class="jacket-jpg">
-							<%= attachment_image_tag @product.jacket_image_id, :image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg", :size =>"50x50" %>画像
+							<%#= attachment_image_tag @product.jacket_image_id, :image, :fill, 100, 100, format: 'jpeg',fallback: "no_image.jpg", :size =>"50x50" %>画像
 						</div>
 					</div>
 					<div class="product-content-box">
 						<p>アルバム名<%= @product.product_name %></p>
 						<p>アーティスト名
-							<%= @product.discs[0].songs[0].artists[0].artist_name %></p>
+							<%#= @product.discs[0].songs[0].artists[0].artist_name %></p>
 						<p><%= @product.price %>価格（税込み）</p>
 						<p>在庫状況<%= @product.number_of_stock %></p>
 						<%= link_to edit_admins_product_path(@product.id) do %><button type="button" class="btn page-link text-dark d-inline-block btn-lg center-block">
@@ -38,7 +38,7 @@
 				</div>
 				<div class="box2">
 					<p>ジャンル名<%=  %></p>
-					<p>レーベル<%= @product.label_name %></p>
+					<p>レーベル<%#= @product.label_name %></p>
 				</div>
 				<% @product.discs.each do |disc| %>
 				<div class="song-name-box">
@@ -60,7 +60,7 @@
 				</div>
 				<div class="staff-comment">
 					<h5>スタッフコメント</h5>
-					<%= @product.staff_comment %>
+					<%#= @product.staff_comment %>
 				</div>
 			</div>
 		</div>
