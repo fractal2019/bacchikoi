@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :purchase_histories, dependent: :destroy
   has_one :cart
 
+  validates :name_kana, :format => {:with => /\A([ァ-ン]|ー)+\z/, :message =>'はカタカナで入力して下さい。'}
+
 soft_deletable
 
   # Deviseを使うと、問答無用でemailがユニーク扱いになる。
