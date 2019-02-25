@@ -8,7 +8,7 @@
 # coding: utf-8
 
 50.times do |i|
-     User.create(:name => "谷口#{i}", :name_kana => "タニグチ#{i}",
+     User.create(:name => "谷口#{i}", :name_kana => "タニグチ",
      			 :email => "email@gmail.com#{i}", :password => "00001#{i}",
      			 :address => "公園#{i}", :tel => "080454545#{i}",
      			 :postal_code => "987654#{i}")
