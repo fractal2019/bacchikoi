@@ -13,7 +13,24 @@
 		<button type="submit" class="btn btn-outline-secondary">検索</button>
 	</span>
 </div> -->
-<%= render 'layouts/serch_contents' %>
+
+<!--ransackフォーム-->
+<div class="input-group col-12 mb-3">
+
+              <%= search_form_for @q, url: search_path do |f| %>
+
+                <%= f.search_field :price_cont, class:"form-control", placeholder:"曲・アーティスト" %>
+
+                <%= f.submit '検索', class: "btn btn-outline-secondary" %>
+
+              <% end %>
+
+              <% if params[:q].present? && params[:q][:price_cont].present? %>
+                Search name: <%= params[:q][:price_cont] %>
+              <% end %>
+</div>
+  <!--ransackフォーム-->
+
 <p class="text-center">検索結果</p>
 <p>商品の検索結果：100件中 1~10件表示</p>
 

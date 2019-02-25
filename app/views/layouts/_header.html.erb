@@ -7,7 +7,7 @@
 <% if user_signed_in? %>
   <!-- ログイン時 -->
 	<!-- ユーザーの会員登録ページに遷移 -->
-	<%= link_to new_user_registration_path , class: 'nav-text' do  %>
+	<%= link_to carts_index_path , class: 'nav-text' do  %>
 	  <li class="nav-list">
 	  <%= image_tag 'cart.png' %>
 	  <br>カート
@@ -32,7 +32,7 @@
 <% else %>
   <!-- 未ログイン時 -->
   	<!-- ユーザーのカート内ページに遷移 -->
-  	<%= link_to new_user_registration_path , class: 'nav-text' do  %>
+  	<%= link_to carts_index_path , class: 'nav-text' do  %>
 	  <li class="nav-list">
 	  <%= image_tag 'cart.png' %>
 	  <br>カート
