@@ -4,12 +4,18 @@
 			<div class="col-*-6 offset-*-3" style="margin: 70px 160px;">
 				<h1 class="top-h1">管理者トップページ
 				</h1>
+				<%= link_to admins_users_path do %>
 				<button type="button" style="padding: 20px 100px; margin-bottom: 40px; " class="btn page-link text-dark d-inline-block btn-lg center-block"><p style="margin: 0;"class="text-primary">ユーザー一覧ページへ</p>
 				</button>
+				<% end %>
+				<%= link_to purchase_histories_path do %>
 				<button type="button" style="padding: 20px 100px; margin-bottom: 40px; " class="btn page-link text-dark d-inline-block btn-lg center-block"><p style="margin: 0;"class="text-primary">ユーザーの購入履歴ページへ</p>
 				</button>
+				<% end %>
+				<%= link_to new_admins_product_path do %>
 				<button type="button" style="padding: 20px 100px; margin-bottom: 40px; " class="btn page-link text-dark d-inline-block btn-lg center-block"><p style="margin: 0;"class="text-primary">商品追加ページへ</p>
 				</button>
+				<% end %>
 			</div>
 		</div>
 	</div>

@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # coding: utf-8
 
-50.times do |i|
+10.times do |i|
      User.create(:name => "谷口#{i}", :name_kana => "タニグチ#{i}",
      			 :email => "email@gmail.com#{i}", :password => "00001#{i}",
      			 :address => "公園#{i}", :tel => "080454545#{i}",
