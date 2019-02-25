@@ -37,7 +37,7 @@
   <div class="field mt-4">
     <label for="password">パスワード</label>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> 文字以上)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class: "pl-2", id: "password" %>
   </div>
