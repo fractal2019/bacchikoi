@@ -11,11 +11,7 @@ class ProductsController < ApplicationController
 
   end
 
-
   def show
-  end
-
-  def toppage
   end
 
 end
