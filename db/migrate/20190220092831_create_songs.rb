@@ -6,6 +6,7 @@ class CreateSongs < ActiveRecord::Migration[5.2]
       t.integer :genre_name
       t.integer :track_order
 
+
       t.timestamps
     end
   end

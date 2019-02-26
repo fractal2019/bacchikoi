@@ -1,4 +1,3 @@
 class Song < ApplicationRecord
-	belongs_to :disc
-	has_many :song_artists
+	belongs_to :artist
 end
