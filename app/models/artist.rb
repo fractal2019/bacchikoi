@@ -1,4 +1,4 @@
 class Artist < ApplicationRecord
-	has_many :songs
-	belongs_to :disc
+	has_many :products
+	belongs_to :label
 end

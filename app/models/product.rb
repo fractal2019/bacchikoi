@@ -11,7 +11,7 @@ class Product < ApplicationRecord
 	has_many :discs, dependent: :destroy
 	has_many :jackets, dependent: :destroy
 	has_many :purchase_histroys
-	belongs_to :label
+	belongs_to :artist
 
 	attachment :jacket_image
 
