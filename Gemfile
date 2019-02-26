@@ -86,3 +86,5 @@ gem "refile-mini_magick"
 gem "cocoon"
 
 gem "pry-rails"
+
+gem 'enum_help'
