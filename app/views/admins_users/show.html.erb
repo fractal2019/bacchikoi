@@ -15,12 +15,12 @@
 		<ul>
 			<% history.purchase_contents.each do |content| %>
 				<li><%= content.product.product_name %></li>
-					<li><%= content.item_quantity %>枚</li>
-					<li class="text-right"><%= content.purchase_unit_price * content.item_quantity %></li>
+					<li>購入枚数 <%= content.item_quantity %>枚</li>
+					<li class="text-right">小計 <%= content.purchase_unit_price * content.item_quantity %></li>
 				<% sum_price += content.purchase_unit_price * content.item_quantity %>
 				<div class="hr my-3"><hr></div>
 			<% end %>
-			<li class="text-right"><%= sum_price %></li>
+			<li class="text-right">合計金額<%= sum_price %></li>
 		</ul>
 	</tr>
 		<tr>
