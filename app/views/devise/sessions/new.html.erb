@@ -3,6 +3,8 @@
 
 <div class="container px-5">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
   <div class="field my-5">
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス", class: "pl-2" %>
   </div>
@@ -13,12 +15,11 @@
 
   <div class="actions">
     <div class="mx-auto text-center">
-      <%= link_to root_path do %>
         <%= f.submit "ログイン", class: "btn btn-primary col-6 my-4 py-3" %>
-      <% end %>
     </div>
   </div>
 <% end %>
 
 <p class="text-right">新規登録する方は<%= render "devise/shared/links" %></p>
+<%= render "devise/shared/error_messages" %>
 </div>
