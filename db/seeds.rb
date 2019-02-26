@@ -14,7 +14,6 @@
      Disc.create(disc_name: "disc#{i + 1}", product_id: "#{i + 1}")
      Song.create(song_name: "曲#{i + 1}", disc_id: "#{i + 1}", genre_name: 1)
      Artist.create(artist_name: "ポルノグラフィティー#{i + 1}")
-     SongsArtist.create(artist_id: "#{i + 1}", song_id: "#{i + 1}")
      Cart.create(user_id: "#{i + 1}")
      CartContent.create(item_quantity: "#{i + 40}", carts_id: "#{i + 1}")
      PurchaseHistory.create(user_id: "#{i + 1}", destination_postal_code: "080454545#{i}",
