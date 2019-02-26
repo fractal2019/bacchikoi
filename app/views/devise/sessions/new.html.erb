@@ -13,7 +13,9 @@
 
   <div class="actions">
     <div class="mx-auto text-center">
-      <%= f.submit "ログイン", class: "btn btn-primary col-6 my-4 py-3" %>
+      <%= link_to root_path do %>
+        <%= f.submit "ログイン", class: "btn btn-primary col-6 my-4 py-3" %>
+      <% end %>
     </div>
   </div>
 <% end %>
