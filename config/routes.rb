@@ -23,5 +23,10 @@ resources :purchase_histories
 resources :admins
 resources :admins_users
 resources :admins_products
+resources :carts, only: [:show]
+
+post '/add_content' => 'carts#add_content'
+post '/update_content' => 'carts#update_content'
+delete '/delete_content' => 'carts#delete_content'
 
 end
