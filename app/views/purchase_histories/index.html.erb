@@ -1,26 +1,33 @@
+<%= @purchase_histories.each do |history| %>
 <table class="table table-bordered my-3"">
 		<tr>
 		<th>購入者</th>
-		<td>徳川家康</td>
+		<% @user = history.users %>
+		<td><%= @user.name %></td>
 		</tr>
 		<tr>
 		<th>購入日</th>
-		<td>2019/05/21 14:30</td>
+		<td><%= history.created_at %></td>
 		</tr>
-		<tr>
+	<tr>
 		<th>購入内容</th>
 		<td>
-			<ul>
-				<li>クリスマスソング</li>
-				<li>購入枚数：1枚</li>
-				<li class="text-right">小計：2,980円</li>
+		<% sum_price = 0 %>
+		<ul>
+			<% history.purchase_contents.each do |content| %>
+				<li>クリスマスソング<%= content.product.id %></li>
+					<li>購入枚数：1<%= content.item_quantity %>枚</li>
+					<li class="text-right">小計：2,980円<%= content.purchase_unit_price * content.item_quantity %></li>
+				<% sum_price += content.purchase_unit_price * content.item_quantity %>
 				<div class="hr my-3"><hr></div>
-				<li class="text-right">合計金額：2,980円</li>
-			</ul>
-		</tr>
+			<% end %>
+			<li class="text-right">合計金額：2,980円<%= sum_price %></li>
+		</ul>
+	</tr>
+
 		<tr>
 		<th>送付先</th>
-		<td>愛知県岡崎市康生町 岡崎城</td>
+		<td><%= history.destination_address %></td>
 		</tr>
 		<tr>
 		<th>ステータス</th>
@@ -40,3 +47,4 @@
 		</td>
 		</tr>
 	</table>
+<% end %>

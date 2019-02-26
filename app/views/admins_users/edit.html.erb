@@ -1,2 +1,69 @@
-<h1>AdminsUsers#edit</h1>
-<p>Find me in app/views/admins_users/edit.html.erb</p>
+<h2 class="text-center mx-auto pt-5 pb-3">会員情報編集</h2>
+
+<hr>
+
+<div class="container px-5">
+<%= form_for(@user) do |f| %>
+
+<!-- 会員登録から引用↓ -->
+                      <% if @user.errors.any? %>
+                        <div id="error_explanation">
+                          <h2><%= @user.errors.count %>件のエラーが発生しました。</h2>
+                          <ul>
+                          <% @user.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                          <% end %>
+                          </ul>
+                        </div>
+                      <% end %>
+
+  <div class="field mt-3">
+    <label for="name">名前</label><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "名前(姓名)", class: "pl-2", id: "name" %>
+  </div>
+
+  <div class="field mt-1">
+    <%= f.text_field :name_kana, autocomplete: "name_kana", placeholder: "名前(セイメイ)", class: "pl-2", id: "name_kana" %>
+  </div>
+
+  <div class="field mt-4">
+    <label for="postal_code">郵便番号</label><br />
+    <%= f.text_field :postal_code, placeholder: "（例）000-0000", class: "pl-2", id: "postal_code" %>
+  </div>
+
+  <div class="field mt-4">
+    <label for="address">住所</label><br />
+    <%= f.text_field :address, placeholder: "住所", class: "pl-2", id: "address" %>
+  </div>
+
+  <div class="field mt-4">
+    <label for="tel">電話番号</label><br />
+    <%= f.telephone_field :tel, placeholder: "（例）000-0000-0000", class: "pl-2", id: "tel" %>
+  </div>
+
+  <div class="field mt-4">
+    <label for="email">メールアドレス</label><br />
+    <%= f.email_field :email, placeholder: "（例）XXX@XXX.com", class: "pl-2", id: "email" %>
+  </div>
+
+  <div class="field mt-4">
+    <label for="password">パスワード</label>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード", class: "pl-2", id: "password" %>
+  </div>
+
+  <div class="actions">
+    <div class="mx-auto text-center">
+      <%= f.submit "編集", class: "btn btn-primary col-6 my-4 py-3" %>
+    </div>
+  </div>
+
+
+<% end %>
+
+<%= link_to "Back", :back %>
+
+</div>
+

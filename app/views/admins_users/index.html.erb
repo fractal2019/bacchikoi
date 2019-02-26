@@ -3,19 +3,24 @@
 	<title></title>
 <!-- 	<link href="css/bootstrap.css" rel="stylesheet"> -->
 </head>
+
 <header id="header">
-	<a href="#" style="padding: 15px" class="btn page-link text-dark d-inline-block btn-lg btn-block">
-		<font size="7">カラオケばっちこい！</font>
-	</a>
-	<div class="link_top">
-		<button type="button" style="padding: 20px 100px; margin-bottom: 40px; " class="btn page-link text-dark d-inline-block btn-lg center-block"><p style="margin: 0;"class="text-primary">管理者トップページへ</p>
+	<%= link_to root_path do %>
+		<button type="button" style="padding: 15px" class="btn page-link text-dark d-inline-block btn-lg btn-block">
+			<font size="7">カラオケばっちこい！</font>
 		</button>
+	<% end %>
+	<div class="link_top">
+		<%= link_to admins_top_path do %>
+			<button type="button" style="padding: 20px 100px; margin-bottom: 40px; " class="btn page-link text-dark d-inline-block btn-lg center-block"><p style="margin: 0;"class="text-primary">管理者トップページへ</p>
+			</button>
+		<% end %>
 	</div>
 </header><!-- /header -->
 <body>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 offset-md-2">
+			<div class="col-md-10 offset-md-1">
 				<h1>ユーザー一覧</h1>
 				<% @users.each do |user| %>
 				<div class="admin-users-index-box clearfix">
@@ -31,21 +36,19 @@
 						<div class="E-T-P-boxbox">
 							<div class="E-T-P-box">Email</div>
 							<div class="E-T-P-box">TEL</div>
-							<div class="E-T-P-box">Password</div>
 						</div>
 						<div class="E-T-P-text-boxbox">
 							<div class="E-T-P-text-box"><%= user.email%></div>
 							<div class="E-T-P-text-box"><%= user.tel%></div>
-							<div class="E-T-P-text-box"><%= user.encrypted_password%></div>
 						</div>
 						<div class="addresses-box"><%= user.address %></div>
 					</div>
-					<div class="btn-group-vertical" style="margin: -140px 11px 60px 498px;" role="group">
-					<%=  link_to purchase_history_path(user.id) do %><button type="button" style="padding: 6px 20px; background-color: red;
+					<div class="btn-group-vertical" style="margin: -160px 11px 60px 502px;" role="group">
+					<%=  link_to admins_user_path(user.id) do %><button type="button" style="padding: 6px 20px; background-color: red;
 					margin-bottom: 10px;" class="btn page-link text-dark d-inline-block">購入履歴</button> <% end %>
-					<%= link_to admins_users_edit(user.id) do %><button type="button" style="padding: 6px 20px; background-color: green;
+					<%= link_to edit_admins_user_path(user.id) do %><button type="button" style="padding: 6px 36px; background-color: green;
 					margin-bottom: 10px;" class="btn page-link text-dark d-inline-block">編集</button> <% end %>
-					<%=  link_to admins_users_path(user.id), method: :delete do %><button type="button" style="padding: 6px 20px; background-color: blue;
+					<%=  link_to admins_user_path(user.id), method: :delete do %><button type="button" style="padding: 6px 36px; background-color: blue;
 					margin-bottom: 10px;" class="btn page-link text-dark d-inline-block">削除</button> <% end %>
 					</div>
 				</div>

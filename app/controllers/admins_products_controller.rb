@@ -15,6 +15,13 @@ class AdminsProductsController < ApplicationController
 
   def show
   	@product = Product.find(params[:id])
+    @discs = @product.discs
+    @artists = 0
+    @discs.each do |disc|
+      disc.songs.each do |song|
+      @artists.push(song.songs_artists_id)
+      end
+    end
   end
 
   def edit
