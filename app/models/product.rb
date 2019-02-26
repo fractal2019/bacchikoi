@@ -13,4 +13,6 @@ class Product < ApplicationRecord
 	has_many :purchase_histroys
 	belongs_to :label
 
+	attachment :jacket_image
+
 end

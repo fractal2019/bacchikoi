@@ -3,7 +3,8 @@ class AdminsProductsController < ApplicationController
   end
 
   def new
-  	@admins_product = Product.new
+  	@products = Product.new
+
   end
 
   def create
