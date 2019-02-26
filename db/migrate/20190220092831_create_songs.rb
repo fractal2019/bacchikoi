@@ -6,6 +6,7 @@ class CreateSongs < ActiveRecord::Migration[5.2]
       t.integer :genre_name, default: 0, null: false, limit: 1
       t.integer :track_order
 
+
       t.timestamps
     end
   end
