@@ -1,4 +1,6 @@
+<% sum_price = 0 %>
 <% @user.purchase_histories.each do |history| %>
+<% history.purchase_contents.each do |content| %>
 <table class="table table-bordered my-3"">
 		<tr>
 		<th>購入者</th>
@@ -11,15 +13,12 @@
 	<tr>
 		<th>購入内容</th>
 		<td>
-		<% sum_price = 0 %>
 		<ul>
-			<% history.purchase_contents.each do |content| %>
 				<li><%= content.product.product_name %></li>
 					<li>購入枚数 <%= content.item_quantity %>枚</li>
 					<li class="text-right">小計 <%= content.purchase_unit_price * content.item_quantity %></li>
 				<% sum_price += content.purchase_unit_price * content.item_quantity %>
 				<div class="hr my-3"><hr></div>
-			<% end %>
 			<li class="text-right">合計金額<%= sum_price %></li>
 		</ul>
 	</tr>
@@ -29,20 +28,8 @@
 		</tr>
 		<tr>
 		<th>ステータス</th>
-		<td>
-			<!-- プログレスバー -->
-			<div class="progress my-1">
-			  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">受付</div>
-
-			  <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">商品準備中</div>
-
-			  <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">出荷済</div>
-
-			  <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">キャンセル</div>
-			</div>
-			<!-- プログレスバー -->
-			<div class="col-12">その他：</div>
-		</td>
+		<td><%= history.delivery_status %></td>
 		</tr>
 	</table>
+	<% end %>
 	<% end %>
