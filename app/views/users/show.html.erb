@@ -82,8 +82,9 @@
 			  <% sum_price += content.purchase_unit_price * content.item_quantity %>
 				<div class="hr my-3"><hr></div>
 			  <% end %>
-				<li class="text-right">合計金額：<% sum_price %>円</li>
+				<li class="text-right">合計金額：<%= sum_price %>円</li>
 			</ul>
+		</td>
 		</tr>
 		<tr>
 		<th>送付先</th>
@@ -101,7 +102,7 @@
 		</td>
 		</tr>
 	</table>
-	<div class="text-center mx-auto">合計金額：<% sum_price %>円</div>
+	<!-- <div class="text-center mx-auto">合計金額：<% sum_price %>円</div> -->
 <% end %>
 
 </div><!-- card p-3 table-responsive -->
