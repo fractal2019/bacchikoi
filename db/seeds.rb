@@ -8,7 +8,7 @@
 # coding: utf-8
 
      Label.create(:label_name => "ワーナーミュージックジャパン")
-     Artist.create(artist_name: "ポルノグラフィティー", label_id: "#{1}")
+     Artist.create(artist_name: "ポルノグラフィティー", label_id: "#{1}", genre_name: "JーPOP")
 2.times do |i|
      User.create(:name => "谷口#{i + 1}", :name_kana => "タニグチ", :email => "email@gmail.com#{i}", :password => "00001#{i}", :address => "公園#{i}", :tel => "080-4545-545#{i}", :postal_code => "987-654#{i}")
      Product.create(price: 1000, number_of_stock: 50, product_introduction: "aaa",staff_comment: "bbb", artist_id: "#{1}", product_name: "フラクタル#{i + 1}", type_name: "アルバム")
@@ -17,17 +17,17 @@ end
 
 2.times do |i|
      Disc.create(disc_name: "P1disc#{i + 1}", product_id: "#{1}")
-     Song.create(song_name: "P1D1曲#{i + 1}", disc_id: "#{1}", genre_name: "JーPOP")
+     Song.create(song_name: "P1D1曲#{i + 1}", disc_id: "#{1}")
 end
 2.times do |i|
-     Song.create(song_name: "P1D2曲#{i + 1}", disc_id: "#{2}", genre_name: "KーPOP")
+     Song.create(song_name: "P1D2曲#{i + 1}", disc_id: "#{2}")
 end
 2.times do |i|
      Disc.create(disc_name: "disc#{i + 1}", product_id: "#{2}")
-     Song.create(song_name: "P2D1曲#{i + 1}", disc_id: "#{3}", genre_name: "洋楽")
+     Song.create(song_name: "P2D1曲#{i + 1}", disc_id: "#{3}")
 end
 2.times do |i|
-     Song.create(song_name: "P2D2曲#{i + 1}", disc_id: "#{4}", genre_name: "洋楽")
+     Song.create(song_name: "P2D2曲#{i + 1}", disc_id: "#{4}")
 end
 2.times do |i|
      CartContent.create(item_quantity: "#{i + 40}", carts_id: "#{1}")
