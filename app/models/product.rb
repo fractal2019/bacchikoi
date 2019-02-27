@@ -13,7 +13,7 @@ class Product < ApplicationRecord
 	has_many :purchase_histroys
 	belongs_to :artist
 
-	attachment :jacket_image
+	attachment :jacket_image_id
 
 	enum type_name:{シングル: 0,アルバム: 1}
 end

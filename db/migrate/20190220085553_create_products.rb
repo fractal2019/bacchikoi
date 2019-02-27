@@ -8,7 +8,9 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :jacket_image_id
       t.datetime :deleted_at
       t.text :product_introduction
+      t.string :product_name
       t.text :staff_comment
+
 
       t.timestamps
     end

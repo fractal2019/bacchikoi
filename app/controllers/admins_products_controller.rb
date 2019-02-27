@@ -3,13 +3,14 @@ class AdminsProductsController < ApplicationController
   end
 
   def new
-  	@products = Product.new
-
+  	@product = Product.new
+    @disc = @product.discs.build
+    @song = @disc.songs.build
   end
 
   def create
-  	admins_product = Product.new(product_params)
-  	admins_product.save
+  	product = Product.new(product_params)
+  	label.save
   	redirect_to admins_product_path
   end
 
@@ -31,7 +32,7 @@ class AdminsProductsController < ApplicationController
   private
   def product_params
   # params.require(:モデル名).permit(:カラム名1, :カラム名2, ...)
-  	params.require(:product).permit(:artist_name, :disc_name, :jacket_image_id, :price, :lebel_name, :type_name, :number_of_stock, :product_introduction, :staff_coment, :song_name, :genre_name)
+  	params.require(:product).permit(:product_name, :type_name, :price, :number_of_stock, :artist_id, :jacket_image_id, :product_introduction, :staff_comment, disc_attributes: [:id, :disc_order, :disc_name, :product_id, song_attributes: [:id, :song_name, :disc_id]])
   end
 
 end
