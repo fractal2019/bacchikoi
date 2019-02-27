@@ -1,13 +1,16 @@
 <header>
   <nav class="bg-warning sticky-top p-2 text-center">
-  	<%= link_to 'カラオケばっちこい！' ,root_path , class: "text-light" %>
+  	<%= link_to root_path do %>
+  	<div class="text-light">カラオケばっちこい！</div>
+  	<% end %>
+  </nav>
 </header>
 
 <ul class="nav-menu clearfix">
 <% if user_signed_in? %>
   <!-- ログイン時 -->
-	<!-- ユーザーの会員登録ページに遷移 -->
-	<%= link_to carts_index_path , class: 'nav-text' do  %>
+	<!-- ユーザーのカート内ページに遷移 -->
+	<%= link_to cart_path(current_user.id) , class: 'nav-text' do  %>
 	  <li class="nav-list">
 	  <%= image_tag 'cart.png' %>
 	  <br>カート
@@ -31,8 +34,8 @@
 
 <% else %>
   <!-- 未ログイン時 -->
-  	<!-- ユーザーのカート内ページに遷移 -->
-  	<%= link_to carts_index_path , class: 'nav-text' do  %>
+  	<!-- ユーザーの会員登録ページに遷移 -->
+  	<%= link_to new_user_session_path , class: 'nav-text' do  %>
 	  <li class="nav-list">
 	  <%= image_tag 'cart.png' %>
 	  <br>カート

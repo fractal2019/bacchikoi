@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_02_23_075236) do
   create_table "artists", force: :cascade do |t|
     t.string "artist_name"
     t.integer "label_id"
+    t.integer "genre_name", limit: 1, default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -58,20 +59,20 @@ ActiveRecord::Schema.define(version: 2019_02_23_075236) do
   end
 
   create_table "labels", force: :cascade do |t|
-    t.integer "label_name"
+    t.integer "label_name", limit: 1, default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
-    t.integer "type_name"
+    t.integer "type_name", limit: 1, default: 0, null: false
     t.integer "price"
     t.integer "number_of_stock"
     t.integer "artist_id"
     t.string "jacket_image_id"
     t.datetime "deleted_at"
     t.text "product_introduction"
-    t.text "staff_coment"
+    t.text "staff_comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "product_name"
@@ -91,7 +92,7 @@ ActiveRecord::Schema.define(version: 2019_02_23_075236) do
     t.integer "user_id"
     t.string "destination_postal_code"
     t.text "destination_address"
-    t.integer "delivery_status"
+    t.integer "delivery_status", limit: 1, default: 0, null: false
     t.datetime "deleted_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -100,7 +101,6 @@ ActiveRecord::Schema.define(version: 2019_02_23_075236) do
   create_table "songs", force: :cascade do |t|
     t.string "song_name"
     t.integer "disc_id"
-    t.integer "genre_name"
     t.integer "track_order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

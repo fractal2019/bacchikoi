@@ -4,7 +4,7 @@ class CreatePurchaseHistories < ActiveRecord::Migration[5.2]
       t.integer :user_id
       t.string :destination_postal_code
       t.text :destination_address
-      t.integer :delivery_status
+      t.integer :delivery_status, default: 0, null: false, limit: 1
       t.datetime :deleted_at
 
       t.timestamps

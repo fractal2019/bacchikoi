@@ -1,49 +1,37 @@
 <% @user.purchase_histories.each do |history| %>
+<% sum_price = 0 %>
 <table class="table table-bordered my-3"">
 		<tr>
 		<th>購入者</th>
-		<td>徳川家康<%= @user.name %></td>
+		<td><%= @user.name %></td>
 		</tr>
 		<tr>
 		<th>購入日</th>
-		<td>2019/05/21 14:30<%= history.created_at %></td>
+		<td><%= history.created_at %></td>
 		</tr>
-		<tr>
+	<tr>
 		<th>購入内容</th>
 		<td>
-		<% sum_price = 0 %>
-			<ul>
+		<ul>
 			<% history.purchase_contents.each do |content| %>
-			<li>クリスマスソング<%= content.product.id %></li>
-				<li>購入枚数：1<%= item_quantity %>枚</li>
-				<li class="text-right">小計：2,980円<%= content.purchase_unit_price * content.item_quantity %></li>
+
+				<li><%= content.product.product_name %></li>
+					<li>購入枚数 <%= content.item_quantity %>枚</li>
+					<li class="text-right">小計 <%= content.purchase_unit_price * content.item_quantity %></li>
 				<% sum_price += content.purchase_unit_price * content.item_quantity %>
 				<div class="hr my-3"><hr></div>
 			<% end %>
-			</ul>
-		</tr>
-
-		<li class="text-right">合計金額：2,980円<%= sum_price %></li>
+		</ul>
+	</tr>
 		<tr>
 		<th>送付先</th>
-		<td>愛知県岡崎市康生町 岡崎城<%= history.destination_address %></td>
+		<td><%= history.destination_address %></td>
 		</tr>
 		<tr>
 		<th>ステータス</th>
-		<td>
-			<!-- プログレスバー -->
-			<div class="progress my-1">
-			  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">受付</div>
-
-			  <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">商品準備中</div>
-
-			  <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">出荷済</div>
-
-			  <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">キャンセル</div>
-			</div>
-			<!-- プログレスバー -->
-			<div class="col-12">その他：</div>
-		</td>
+		<td><%= history.delivery_status %></td>
 		</tr>
 	</table>
+
+	<li class="text-right">合計金額<%= sum_price %></li>
 	<% end %>

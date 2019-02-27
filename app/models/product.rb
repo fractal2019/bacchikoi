@@ -15,4 +15,5 @@ class Product < ApplicationRecord
 
 	attachment :jacket_image_id
 
+	enum type_name:{シングル: 0,アルバム: 1}
 end
