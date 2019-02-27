@@ -9,6 +9,7 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.datetime :deleted_at
       t.text :product_introduction
       t.text :staff_coment
+      t.string :product_name
 
       t.timestamps
     end
