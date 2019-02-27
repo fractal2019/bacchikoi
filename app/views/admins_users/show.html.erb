@@ -1,6 +1,5 @@
-<% sum_price = 0 %>
 <% @user.purchase_histories.each do |history| %>
-<% history.purchase_contents.each do |content| %>
+<% sum_price = 0 %>
 <table class="table table-bordered my-3"">
 		<tr>
 		<th>購入者</th>
@@ -14,12 +13,14 @@
 		<th>購入内容</th>
 		<td>
 		<ul>
+			<% history.purchase_contents.each do |content| %>
+
 				<li><%= content.product.product_name %></li>
 					<li>購入枚数 <%= content.item_quantity %>枚</li>
 					<li class="text-right">小計 <%= content.purchase_unit_price * content.item_quantity %></li>
 				<% sum_price += content.purchase_unit_price * content.item_quantity %>
 				<div class="hr my-3"><hr></div>
-			<li class="text-right">合計金額<%= sum_price %></li>
+			<% end %>
 		</ul>
 	</tr>
 		<tr>
@@ -31,5 +32,6 @@
 		<td><%= history.delivery_status %></td>
 		</tr>
 	</table>
-	<% end %>
+
+	<li class="text-right">合計金額<%= sum_price %></li>
 	<% end %>

@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2019_02_23_075236) do
   create_table "artists", force: :cascade do |t|
     t.string "artist_name"
     t.integer "label_id"
+    t.integer "genre_name", limit: 1, default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -100,7 +101,6 @@ ActiveRecord::Schema.define(version: 2019_02_23_075236) do
   create_table "songs", force: :cascade do |t|
     t.string "song_name"
     t.integer "disc_id"
-    t.integer "genre_name", limit: 1, default: 0, null: false
     t.integer "track_order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
