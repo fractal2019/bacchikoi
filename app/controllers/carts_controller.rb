@@ -2,7 +2,7 @@ class CartsController < ApplicationController
   before_action :setup_cart_content!, only: [:add_content, :update_content, :delete_content]
 
   def show
-    @cart_contents = current_cart.cart_contents
+
   end
 
   # 商品一覧画面から、「商品購入」を押した時のアクション
