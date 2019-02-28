@@ -1,6 +1,4 @@
-<%= render 'layouts/header' %>
 <h2 class="text-center mx-auto pt-5 pb-3">会員情報編集</h2>
-
 <hr>
 
 <div class="container px-5">
@@ -46,6 +44,28 @@
     <label for="email">メールアドレス</label><br />
     <%= f.email_field :email, placeholder: "（例）XXX@XXX.com", class: "pl-2", id: "email" %>
   </div>
+   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :password %> <i>(変更したくない場合は空白のままにしてください。)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+      <br />
+      <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password %> <i>(変更を確認するために現在のパスワードが必要です。)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
 
   <div class="actions">
     <div class="mx-auto text-center">

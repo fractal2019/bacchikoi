@@ -17,7 +17,7 @@
 <!--ransackフォーム-->
 <div class="input-group col-12 mb-3">
 
-              <%= search_form_for @q, url: search_path do |f| %>
+              <%= search_form_for Product, url: search_path do |f| %>
 
                 <%= f.search_field :price_cont, class:"form-control", placeholder:"曲・アーティスト" %>
 

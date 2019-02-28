@@ -17,7 +17,4 @@ class ProductsController < ApplicationController
     @products = @q.result(distinct: true)
   end
 
-  def toppage
-  end
-
 end
