@@ -17,17 +17,17 @@ end
 
 2.times do |i|
      Disc.create(disc_name: "P1disc#{i + 1}", product_id: "#{1}")
-     Song.create(song_name: "P1D1曲#{i + 1}", disc_id: "#{1}")
+     Song.create(song_name1: "P1D1曲#{i + 1}",song_name5: "P1D1曲#{i + 1}",song_name6: "P1D1曲#{i + 1}",disc_id: "#{1}")
 end
 2.times do |i|
-     Song.create(song_name: "P1D2曲#{i + 1}", disc_id: "#{2}")
+     Song.create(song_name1: "P1D2曲#{i + 1}",song_name2: "P1D1曲#{i + 1}",song_name3: "P1D1曲#{i + 1}",song_name4: "P1D1曲#{i + 1}",song_name5: "P1D1曲#{i + 1}",song_name6: "P1D1曲#{i + 1}", disc_id: "#{2}")
 end
 2.times do |i|
      Disc.create(disc_name: "disc#{i + 1}", product_id: "#{2}")
-     Song.create(song_name: "P2D1曲#{i + 1}", disc_id: "#{3}")
+     Song.create(song_name1: "P2D1曲#{i + 1}", disc_id: "#{3}")
 end
 2.times do |i|
-     Song.create(song_name: "P2D2曲#{i + 1}", disc_id: "#{4}")
+     Song.create(song_name1: "P2D2曲#{i + 1}", disc_id: "#{4}")
 end
 2.times do |i|
      CartContent.create(item_quantity: "#{i + 40}", cart_id: "#{1}", product_id: "#{1}")
