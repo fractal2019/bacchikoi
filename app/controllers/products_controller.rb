@@ -4,18 +4,17 @@ class ProductsController < ApplicationController
     @products = Product.new
   end
 
-    # def index
-    #   @q = Person.ransack(params[:q])
-    #   @people = @q.result(distinct: true)
-    # end
-
   def index
-  	@q = Product.ransack(params[:q])
+    @q = Product.ransack(params[:q])
   	@products = @q.result(distinct: true)
+    @products = Product.all
   end
 
 
   def show
+    @product = Product.find(params[:id])
+    @q = Product.ransack(params[:q])
+    @products = @q.result(distinct: true)
   end
 
   def toppage

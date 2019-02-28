@@ -32,11 +32,11 @@
 <!-- 下記はカラオケ人気曲順です -->
 <h2 class="mt-4">カラオケ人気曲ランキング</h2>
 <div class="card p-3">
-  <div class="row pl-2">1位：曲名／アーティスト名</div>
-  <div class="row pl-2">2位：曲名／アーティスト名</div>
-  <div class="row pl-2">3位：曲名／アーティスト名</div>
-  <div class="row pl-2">4位：曲名／アーティスト名</div>
-  <div class="row pl-2">5位：曲名／アーティスト名</div>
+  <div class="row pl-2">1位：<%= link_to 'Love so sweet／嵐', product_path(1) %></div>
+  <div class="row pl-2">2位：<%= link_to '女々しくて／ゴルデンボンバー' %></div>
+  <div class="row pl-2">3位：<%= link_to '純恋歌／湘南乃風' %></div>
+  <div class="row pl-2">4位：<%= link_to 'クリスマスソング／バックナンバー' %></div>
+  <div class="row pl-2">5位：<%= link_to 'リンダリンダ／ブルーハーツ' %></div>
 </div>
 
 <!-- 下記は歌いやすい曲ランキングベスト５（ベタ打ち？）です。 -->
@@ -45,14 +45,14 @@
   <div class="row mb-2 p-3 box">
       <div class="col-4">
         <div class="mx-auto text-center">CDシングル</div>
-        <div class="box-jacket"><%= image_tag 'test.jpg'%></div>
+        <div class="box-jacket"><%= image_tag 'Ulfuls_Ashitagaarusa.jpg'%></div>
       </div>
       <div class="col-8 mt-3">
-        <div class="box-song"><a href="#">クリスマスソング</a></div>
+        <div class="box-song"><a href="#">明日があるさ</a></div>
         <div class="hr my-1"><hr></div>
-        <div class="box-artist"><a href="#">バックナンバー</a></div>
+        <div class="box-artist"><a href="#">ウルフルズ</a></div>
         <div class="hr my-1"><hr></div>
-        <div class="box-price">価格（税込）：¥2,980</div>
+        <div class="box-price">価格（税込）：¥1,000</div>
         <div class="hr my-1"><hr></div>
         <div class="box-stock">在庫状況：在庫あり</div>
         <div class="mx-auto text-center">
@@ -61,18 +61,17 @@
       </div>
     </div><!-- row mb-2 p-3 box -->
 
-    <!-- 以降は繰り返し -->
     <div class="row mb-2 p-3 box">
       <div class="col-4">
-        <div class="mx-auto text-center">CDシングル</div>
-        <div class="box-jacket"><%= image_tag 'test.jpg'%></div>
+        <div class="mx-auto text-center">CDアルバム</div>
+        <div class="box-jacket"><%= image_tag 'Mongok800_chiisanakoinouta.jpg'%></div>
       </div>
       <div class="col-8 mt-3">
-        <div class="box-song"><a href="#">クリスマスソング</a></div>
+        <div class="box-song"><a href="#">小さな恋の歌</a></div>
         <div class="hr my-1"><hr></div>
-        <div class="box-artist"><a href="#">バックナンバー</a></div>
+        <div class="box-artist"><a href="#">モンゴル800</a></div>
         <div class="hr my-1"><hr></div>
-        <div class="box-price">価格（税込）：¥2,980</div>
+        <div class="box-price">価格（税込）：¥2,160</div>
         <div class="hr my-1"><hr></div>
         <div class="box-stock">在庫状況：在庫あり</div>
         <div class="mx-auto text-center">
@@ -84,14 +83,14 @@
     <div class="row mb-2 p-3 box">
       <div class="col-4">
         <div class="mx-auto text-center">CDシングル</div>
-        <div class="box-jacket"><%= image_tag 'test.jpg'%></div>
+        <div class="box-jacket"><%= image_tag 'Fukuyamamasaharu_Sakurazaka.jpg'%></div>
       </div>
       <div class="col-8 mt-3">
-        <div class="box-song"><a href="#">クリスマスソング</a></div>
+        <div class="box-song"><a href="#">桜坂</a></div>
         <div class="hr my-1"><hr></div>
-        <div class="box-artist"><a href="#">バックナンバー</a></div>
+        <div class="box-artist"><a href="#">福山雅治</a></div>
         <div class="hr my-1"><hr></div>
-        <div class="box-price">価格（税込）：¥2,980</div>
+        <div class="box-price">価格（税込）：¥1,380</div>
         <div class="hr my-1"><hr></div>
         <div class="box-stock">在庫状況：在庫あり</div>
         <div class="mx-auto text-center">
@@ -100,7 +99,44 @@
       </div>
     </div>
 
-  <!-- 繰り返しここまで -->
+    <div class="row mb-2 p-3 box">
+      <div class="col-4">
+        <div class="mx-auto text-center">CDシングル</div>
+        <div class="box-jacket"><%= image_tag 'Spitz_Robinson.jpg'%></div>
+      </div>
+      <div class="col-8 mt-3">
+        <div class="box-song"><a href="#">ロビンソン</a></div>
+        <div class="hr my-1"><hr></div>
+        <div class="box-artist"><a href="#">スピッツ</a></div>
+        <div class="hr my-1"><hr></div>
+        <div class="box-price">価格（税込）：¥1,180</div>
+        <div class="hr my-1"><hr></div>
+        <div class="box-stock">在庫状況：在庫あり</div>
+        <div class="mx-auto text-center">
+          <button type="button" class="btn btn-warning mt-3">カートに入れる</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2 p-3 box">
+      <div class="col-4">
+        <div class="mx-auto text-center">CDシングル</div>
+        <div class="box-jacket"><%= image_tag 'Sign_MrChirldren.jpg'%></div>
+      </div>
+      <div class="col-8 mt-3">
+        <div class="box-song"><a href="#">Sign</a></div>
+        <div class="hr my-1"><hr></div>
+        <div class="box-artist"><a href="#">Mr.Children</a></div>
+        <div class="hr my-1"><hr></div>
+        <div class="box-price">価格（税込）：¥980</div>
+        <div class="hr my-1"><hr></div>
+        <div class="box-stock">在庫状況：在庫あり</div>
+        <div class="mx-auto text-center">
+          <button type="button" class="btn btn-warning mt-3">カートに入れる</button>
+        </div>
+      </div>
+    </div>
+
 </div><!-- ranking -->
 
 </div><!-- container -->
