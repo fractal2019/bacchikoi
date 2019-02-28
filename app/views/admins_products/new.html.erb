@@ -73,35 +73,10 @@
                 <%= f.text_area :staff_coment, placeholder: "ここにスタッフコメントを記入", class: "pl-2" %>
               </div>
 
-              <%= f.fields_for :discs do |disc| %>
+              <%= f.text_field :disc, placeholder: "ディスクタイトル", class: "pl-2" %>
 
-                <%= disc.text_field :disc_name, placeholder: "ここにディスクタイトルを記入", class: "pl-2" %>
-                      <div id="links">
-                      <%= render 'disc_fields', f: disc %>
-                    </div>
+              <%= f.text_area :song, placeholder: "ソングタイトル", class: "pl-2" %>
 
-                        <%= link_to_add_association 'add disc',f, :discs %>
-                      <%= f.submit %>
-
-                  <p>シングル/アルバム内のコンテンツ</p>
-                  <div class="card p-3 mb-3">
-                      <% disc.fields_for :songs do |song| %>
-                          <div class="form-group input-group mb-2">
-
-                              <div id="links">
-                              <%= render "song_fields", f: song %>
-                            </div>
-                            <%#= link_to_add_association "タグを追加", f, :songs %>
-
-                          </div>
-                        <!-- </form> -->
-
-                      <% end %>
-                      <!-- fields_for song -->
-                  </div><!-- card110line -->
-
-
-              <% end %><!-- fields_for disc -->
           <% end %><!-- fields_for product -->
 
 

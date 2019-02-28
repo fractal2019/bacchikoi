@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_02_20_093808) do
   end
 
   create_table "cart_contents", force: :cascade do |t|
-    t.integer "item_quantity"
+    t.integer "item_quantity", default: 0, null: false
     t.integer "cart_id"
     t.integer "product_id"
     t.datetime "created_at", null: false
@@ -100,7 +100,26 @@ ActiveRecord::Schema.define(version: 2019_02_20_093808) do
   end
 
   create_table "songs", force: :cascade do |t|
-    t.string "song_name"
+    t.string "song_name1"
+    t.string "song_name2"
+    t.string "song_name3"
+    t.string "song_name4"
+    t.string "song_name5"
+    t.string "song_name6"
+    t.string "song_name7"
+    t.string "song_name8"
+    t.string "song_name9"
+    t.string "song_name10"
+    t.string "song_name11"
+    t.string "song_name12"
+    t.string "song_name13"
+    t.string "song_name14"
+    t.string "song_name15"
+    t.string "song_name16"
+    t.string "song_name17"
+    t.string "song_name18"
+    t.string "song_name19"
+    t.string "song_name20"
     t.integer "disc_id"
     t.integer "track_order"
     t.datetime "created_at", null: false

@@ -8,7 +8,7 @@ class CartsController < ApplicationController
   else
     session[:user_id] = params[:user_id]
   end
-  end
+end
 
   # 商品一覧画面から、「商品購入」を押した時のアクション
   def add_content
@@ -16,14 +16,14 @@ class CartsController < ApplicationController
       @cart_content = current_cart.cart_contents.build(product_id: params[:product_id])
     end
 
-    @cart_content.quantity += params[:quantity].to_i
+    @cart_content.quantity += params[:item_quantity].to_i
     @cart_content.save
     redirect_to current_cart
   end
 
   # カート詳細画面から、「更新」を押した時のアクション
   def update_content
-    @cart_content.update(quantity: params[:quantity].to_i)
+    @cart_content.update(item_quantity: params[:item_quantity].to_i)
     redirect_to current_cart
   end
 

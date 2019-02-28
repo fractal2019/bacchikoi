@@ -1,2 +1,80 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<%= render 'layouts/header' %>
+
+<div class="container">
+
+<% if user_signed_in? %>
+  <p>ようこそ、<%= current_user.name %> 様</p>
+<% else %>
+  <p>ようこそ、ゲスト様</p>
+<% end %>
+
+<!--ransackフォーム-->
+<div class="input-group col-12 mb-3">
+
+              <%= search_form_for @q, url: search_path do |f| %>
+
+                <%= f.search_field :price_cont, class:"form-control", placeholder:"曲・アーティスト" %>
+
+                <%= f.submit '検索', class: "btn btn-outline-secondary" %>
+
+              <% end %>
+
+              <% if params[:q].present? && params[:q][:price_cont].present? %>
+                Search name: <%= params[:q][:price_cont] %>
+              <% end %>
+</div>
+  <!--ransackフォーム-->
+
+<div class="row mb-2 p-3 box">
+  <div class="col-4">
+    <div class="mx-auto text-center"><%= @product.type_name %></div>
+    <div class="box-jacket"><%= image_tag 'Ulfuls_Ashitagaarusa.jpg', fallback: "no_image.jpg" %></div>
+    <div class="box-jacket"><%#<%= image_tag @product.jacket_image_id, fallback: "no_image.jpg" %></div>
+  </div>
+  <div class="col-8 mt-3">
+    <div class="box-song"><%= @product.product_name %></div>
+    <div class="hr my-1"><hr></div>
+    <div class="box-artist"><%= @product.artist.artist_name %></div>
+    <div class="hr my-1"><hr></div>
+    <div class="box-price">価格（税込）：¥<%= @product.price %></div>
+    <div class="hr my-1"><hr></div>
+    <div class="box-stock">在庫状況：<%= @product.number_of_stock %>
+    </div>
+    <div class="mx-auto text-center">
+      <button type="button" class="btn btn-warning mt-3">カートに入れる</button>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-2 p-3 card">
+	<p>ジャンル名：<%= @product.artist.genre_name %></p>
+	<p>レーベル名：<%= @product.artist.label.label_name %></p>
+</div>
+
+<div class="row mb-2 p-3 card">
+	<p>収録曲</p>
+		<% @product.discs.each do |disc| %>
+			<p>【<%= disc.disc_name %>】</p>
+			<% disc.songs.each do |song| %>
+				<ul>
+					<li><%= song.song_name %></li>
+				</ul>
+			<% end %>
+		<% end %>
+</div>
+
+<div class="row mb-2 p-3 card">
+	<p>商品詳細</p>
+	<div><%= @product.product_introduction %></div>
+</div>
+
+<div class="row mb-2 p-3 card">
+	<p>スタッフコメント</p>
+	<div><%= @product.staff_comment %></div>
+</div>
+
+</div><!-- container -->
+
+<footer class="footer mt-3 p-2 bg-warning text-light">
+  <div class="col-12 text-center">©︎inflatop.inc</div>
+</footer>

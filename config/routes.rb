@@ -14,7 +14,6 @@ Rails.application.routes.draw do
 
   get "admins/top"
   get 'products/search' => "products#search", as: "search"
-  get 'products/show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 resources :users, only: [:show, :index]
@@ -23,6 +22,7 @@ resources :admins
 resources :admins_users
 resources :admins_products
 resources :carts, only: [:show]
+resources :products
 
 post '/add_content' => 'carts#add_content'
 post '/update_content' => 'carts#update_content'
