@@ -41,7 +41,12 @@
 				<button type="button" class="btn btn-warning btn-block">取消</button>
 			</div>
 			<div class="col-6">
-				<button type="button" class="btn btn-warning btn-block">購入</button>
+				<button type="button" class="btn btn-warning btn-block">
+				<%= form_for(add_item_path) do %>
+                <%= submit "購入" %>
+            	<% end %>
+
+            	</button>
 			</div>
 		</div>
 	</div>

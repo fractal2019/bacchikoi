@@ -1,6 +1,4 @@
 class AdminsProductsController < ApplicationController
-  def index
-  end
 
   def new
   	@product = Product.new
@@ -11,7 +9,7 @@ class AdminsProductsController < ApplicationController
   def create
   	product = Product.new(product_params)
   	label.save
-  	redirect_to admins_product_path
+  	render :show
   end
 
 
@@ -32,7 +30,7 @@ class AdminsProductsController < ApplicationController
   private
   def product_params
   # params.require(:モデル名).permit(:カラム名1, :カラム名2, ...)
-  	params.require(:product).permit(:product_name, :type_name, :price, :number_of_stock, :artist_id, :jacket_image_id, :product_introduction, :staff_comment, disc_attributes: [:id, :disc_order, :disc_name, :product_id, song_attributes: [:id, :song_name, :disc_id]])
+  	params.require(:product).permit(:product_name, :type_name, :price, :number_of_stock, :artist_id, :jacket_image_id, :product_introduction, :staff_comment, disc_attributes: [:id, :disc_order, :disc_name, :product_id, song_attributes: [:id, :song_name1, :song_name2, :song_name3, :song_name4, :song_name5, :song_name6, :song_name7, :song_name8, :song_name9, :song_name10, :song_name11, :song_name12, :song_name13, :song_name14, :song_name15, :song_name16, :song_name17, :song_name18, :song_name19, :song_name20, :disc_id]])
   end
 
 end
