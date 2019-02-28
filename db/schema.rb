@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_02_20_093808) do
   end
 
   create_table "cart_contents", force: :cascade do |t|
-    t.integer "item_quantity"
+    t.integer "item_quantity", default: 0
     t.integer "cart_id"
     t.integer "product_id"
     t.datetime "created_at", null: false
@@ -77,7 +77,6 @@ ActiveRecord::Schema.define(version: 2019_02_20_093808) do
     t.text "staff_comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_name"], name: "index_products_on_product_name"
   end
 
   create_table "purchase_contents", force: :cascade do |t|
