@@ -30,10 +30,10 @@ end
      Song.create(song_name: "P2D2曲#{i + 1}", disc_id: "#{4}")
 end
 2.times do |i|
-     CartContent.create(item_quantity: "#{i + 40}", carts_id: "#{1}")
+     CartContent.create(item_quantity: "#{i + 40}", cart_id: "#{1}", product_id: "#{1}")
 end
 2.times do |i|
-     CartContent.create(item_quantity: "#{i + 60}", carts_id: "#{2}")
+     CartContent.create(item_quantity: "#{i + 60}", cart_id: "#{2}", product_id: "#{2}")
 end
 2.times do |i|
      PurchaseHistory.create(user_id: "#{1}", destination_postal_code: "080-454-545#{i}",destination_address: "公園#{1 + i}",delivery_status: "商品準備中")
