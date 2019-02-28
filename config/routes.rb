@@ -20,7 +20,8 @@ resources :users, only: [:show, :index]
 resources :purchase_histories
 resources :admins
 resources :admins_users
-resources :admins_products
+resources :admins_products, only: [ :new, :create, :edit, :update, :destroy]
+post 'admins_product/:id' => 'admins_products#show'
 resources :carts, only: [:show]
 resources :products
 

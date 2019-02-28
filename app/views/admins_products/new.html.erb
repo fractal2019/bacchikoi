@@ -11,7 +11,7 @@
 
 
 
-          <%=form_for @product,:url =>'product_path' do |f| %>
+          <%=form_for @product do |f| %>
 
               <div class="form-group">
                 <label for="File">シングル名/アルバム名</label><br />
@@ -70,14 +70,121 @@
 
               <div class="form-group">
                 <label for="exampleFormControlTextarea1">スタッフコメント</label>
-                <%= f.text_area :staff_coment, placeholder: "ここにスタッフコメントを記入", class: "pl-2" %>
+                <%= f.text_area :staff_comment, placeholder: "ここにスタッフコメントを記入", class: "pl-2" %>
               </div>
 
-              <%= f.text_field :disc, placeholder: "ディスクタイトル", class: "pl-2" %>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+              <%= f.fields_for :discs do |disc| %>
 
-              <%= f.text_area :song, placeholder: "ソングタイトル", class: "pl-2" %>
+              <%= disc.text_field :disc_name, placeholder: "ディスクタイトル", class: "pl-2" %>
+              </div>
 
-          <% end %><!-- fields_for product -->
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= disc.fields_for :songs do |song| %>
+                <%= song.text_area :song_name1, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name2, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name3, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name4, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name5, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name6, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name7, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name8, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name9, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name10, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name11, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name12, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name13, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name14, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name15, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name16, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name17, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name18, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name19, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">スタッフコメント</label>
+                <%= song.text_area :song_name20, placeholder: "ソングタイトル", class: "pl-2" %>
+              </div>
+
+              <% end %><!-- song -->
+          <% end %><!-- disc -->
+          <%= f.submit "クリエイト" %>
+          <% end %>
 
 
       </div>
