@@ -2,9 +2,9 @@ class CartsController < ApplicationController
   # before_action :setup_cart_content!, only: [:add_content, :update_content, :delete_content]
 
   def show
-    if session[:user_id]
+    if session[:user_id].nil?
     @cart = Cart.find_by(params[:id])
-    @cart_content = @cart.cart_contents
+    @cart_contents = @cart.cart_contents
   else
     session[:user_id] = params[:user_id]
   end

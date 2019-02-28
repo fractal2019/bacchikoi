@@ -8,6 +8,7 @@
 <% end %>
 
 <p><%= current_user.name %> 様のカート内</p>
+<% @cart_contents.each do |cart_content| %>
 <div class="row my-2 mx-1 p-3 box">
 	<div class="col-4">
 		<div class="box-jacket">
@@ -15,13 +16,13 @@
 		</div>
 	</div>
 	<div class="col-8">
-		<div class="box-song"><a href="#">クリスマスソング</a></div>
+		<div class="box-song"><a href="#"><%= cart_content.product.product_name %></a></div>
 		<div class="hr my-1"><hr></div>
-		<div class="box-artist"><a href="#">バックナンバー</a></div>
+		<div class="box-artist"><a href="#"><%= cart_content.product.artist.artist_name %></a></div>
 		<div class="hr my-1"><hr></div>
-		<div class="box-price">価格（税込）：¥2,980</div>
+		<div class="box-price">価格（税込）：<%= cart_content.product.price %></div>
 		<div class="hr my-1"><hr></div>
-		<div class="box-stock">個数：
+		<div class="box-stock">個数：<%= cart_content.product.number_of_stock %>
 			<select name="cnt" style="margin-right: 0.5em">
 			<option value="0">0</option>
 			<option value="1" selected>1</option>
@@ -46,202 +47,4 @@
 		</div>
 	</div>
 </div><!-- row my-2 mx-1 p-3 box -->
-
-
-<!-- 以降繰り返し -->
-<div class="row my-2 mx-1 p-3 box">
-	<div class="col-4">
-		<div class="box-jacket"><%= image_tag 'test.jpg'%></div>
-	</div>
-	<div class="col-8">
-		<div class="box-song"><a href="#">クリスマスソング</a></div>
-		<div class="hr my-1"><hr></div>
-		<div class="box-artist"><a href="#">バックナンバー</a></div>
-		<div class="hr my-1"><hr></div>
-		<div class="box-price">価格（税込）：¥2,980</div>
-		<div class="hr my-1"><hr></div>
-		<div class="box-stock">個数：
-			<select name="cnt" style="margin-right: 0.5em">
-			<option value="0">0</option>
-			<option value="1" selected>1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-			<option value="6">6</option>
-			<option value="7">7</option>
-			<option value="8">8</option>
-			<option value="9">9</option>
-			</select>個
-		</div>
-		<div class="hr my-1"><hr></div>
-		<div class="row mt-2 mx-auto">
-			<div class="col-6">
-				<button type="button" class="btn btn-warning btn-block">取消</button>
-			</div>
-			<div class="col-6">
-				<button type="button" class="btn btn-warning btn-block">購入</button>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="row my-2 mx-1 p-3 box">
-	<div class="col-4">
-		<div class="box-jacket"><%= image_tag 'test.jpg'%></div>
-	</div>
-	<div class="col-8">
-		<div class="box-song"><a href="#">クリスマスソング</a></div>
-		<div class="hr my-1"><hr></div>
-		<div class="box-artist"><a href="#">バックナンバー</a></div>
-		<div class="hr my-1"><hr></div>
-		<div class="box-price">価格（税込）：¥2,980</div>
-		<div class="hr my-1"><hr></div>
-		<div class="box-stock">個数：
-			<select name="cnt" style="margin-right: 0.5em">
-			<option value="0">0</option>
-			<option value="1" selected>1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-			<option value="6">6</option>
-			<option value="7">7</option>
-			<option value="8">8</option>
-			<option value="9">9</option>
-			</select>個
-		</div>
-		<div class="hr my-1"><hr></div>
-		<div class="row mt-2 mx-auto">
-			<div class="col-6">
-				<button type="button" class="btn btn-warning btn-block">取消</button>
-			</div>
-			<div class="col-6">
-				<button type="button" class="btn btn-warning btn-block">購入</button>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="row my-2 mx-1 p-3 box">
-	<div class="col-4">
-		<div class="box-jacket"><%= image_tag 'test.jpg'%></div>
-	</div>
-	<div class="col-8">
-		<div class="box-song"><a href="#">クリスマスソング</a></div>
-		<div class="hr my-1"><hr></div>
-		<div class="box-artist"><a href="#">バックナンバー</a></div>
-		<div class="hr my-1"><hr></div>
-		<div class="box-price">価格（税込）：¥2,980</div>
-		<div class="hr my-1"><hr></div>
-		<div class="box-stock">個数：
-			<select name="cnt" style="margin-right: 0.5em">
-			<option value="0">0</option>
-			<option value="1" selected>1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-			<option value="6">6</option>
-			<option value="7">7</option>
-			<option value="8">8</option>
-			<option value="9">9</option>
-			</select>個
-		</div>
-		<div class="hr my-1"><hr></div>
-		<div class="row mt-2 mx-auto">
-			<div class="col-6">
-				<button type="button" class="btn btn-warning btn-block">取消</button>
-			</div>
-			<div class="col-6">
-				<button type="button" class="btn btn-warning btn-block">購入</button>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="row my-2 mx-1 p-3 box">
-	<div class="col-4">
-		<div class="box-jacket"><%= image_tag 'test.jpg'%></div>
-	</div>
-	<div class="col-8">
-		<div class="box-song"><a href="#">クリスマスソング</a></div>
-		<div class="hr my-1"><hr></div>
-		<div class="box-artist"><a href="#">バックナンバー</a></div>
-		<div class="hr my-1"><hr></div>
-		<div class="box-price">価格（税込）：¥2,980</div>
-		<div class="hr my-1"><hr></div>
-		<div class="box-stock">個数：
-			<select name="cnt" style="margin-right: 0.5em">
-			<option value="0">0</option>
-			<option value="1" selected>1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-			<option value="6">6</option>
-			<option value="7">7</option>
-			<option value="8">8</option>
-			<option value="9">9</option>
-			</select>個
-		</div>
-		<div class="hr my-1"><hr></div>
-		<div class="row mt-2 mx-auto">
-			<div class="col-6">
-				<button type="button" class="btn btn-warning btn-block">取消</button>
-			</div>
-			<div class="col-6">
-				<button type="button" class="btn btn-warning btn-block">購入</button>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="row my-2 mx-1 p-3 box">
-	<div class="col-4">
-		<div class="box-jacket"><%= image_tag 'test.jpg'%></div>
-	</div>
-	<div class="col-8">
-		<div class="box-song"><a href="#">クリスマスソング</a></div>
-		<div class="hr my-1"><hr></div>
-		<div class="box-artist"><a href="#">バックナンバー</a></div>
-		<div class="hr my-1"><hr></div>
-		<div class="box-price">価格（税込）：¥2,980</div>
-		<div class="hr my-1"><hr></div>
-		<div class="box-stock">個数：
-			<select name="cnt" style="margin-right: 0.5em">
-			<option value="0">0</option>
-			<option value="1" selected>1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-			<option value="6">6</option>
-			<option value="7">7</option>
-			<option value="8">8</option>
-			<option value="9">9</option>
-			</select>個
-		</div>
-		<div class="hr my-1"><hr></div>
-		<div class="row mt-2 mx-auto">
-			<div class="col-6">
-				<button type="button" class="btn btn-warning btn-block">取消</button>
-			</div>
-			<div class="col-6">
-				<button type="button" class="btn btn-warning btn-block">購入</button>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- 繰り返しここまで -->
-
-<div class="col-12">
-    <div class="mx-auto text-center">
-    	<button type="button" class="btn btn-warning">まとめて購入する</button>
-    </div>
-</div>
-</div><!-- container -->
-
-<footer class="footer mt-3 p-2 bg-warning text-light">
-  <div class="col-12 text-center">©︎inflatop.inc</div>
-</footer>
+<% end %>
