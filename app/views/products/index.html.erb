@@ -9,13 +9,13 @@
 <% end %>
 
 <!--ransackフォーム-->
-<div class="input-group col-12 mb-3">
+<div class="input-group flex-nowrap mb-3">
 
-              <%= search_form_for @q, url: search_path do |f| %>
+              <%= search_form_for @q, class:"input-group-prepend w-100", url: search_path do |f| %>
 
-                <%= f.search_field :price_cont, class:"form-control", placeholder:"曲・アーティスト" %>
+                <%= f.search_field :price_cont, class:"form-control col-10", placeholder:"曲・アーティストを探す" %>
 
-                <%= f.submit '検索', class: "btn btn-outline-secondary" %>
+                <%= f.submit '検索', class: "btn btn-outline-secondary  col-2" %>
 
               <% end %>
 

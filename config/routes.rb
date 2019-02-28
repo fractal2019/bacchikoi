@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get 'products/search' => "products#search", as: "search"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-resources :users, only: [:show, :index]
+resources :users, only: [:show, :index, :edit]
 resources :purchase_histories
 resources :admins
 resources :admins_users
