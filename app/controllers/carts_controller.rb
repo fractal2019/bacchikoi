@@ -1,8 +1,13 @@
 class CartsController < ApplicationController
-  before_action :setup_cart_content!, only: [:add_content, :update_content, :delete_content]
+  # before_action :setup_cart_content!, only: [:add_content, :update_content, :delete_content]
 
   def show
-    @cart_contents = current_cart.cart_contents
+    if session[:user_id]
+    @cart = Cart.find_by(params[:id])
+    @cart_content = @cart.cart_contents
+  else
+    session[:user_id] = params[:user_id]
+  end
   end
 
   # 商品一覧画面から、「商品購入」を押した時のアクション
@@ -22,7 +27,7 @@ class CartsController < ApplicationController
     redirect_to current_cart
   end
 
-　# カート詳細画面から、「削除」を押した時のアクション
+# カート詳細画面から、「削除」を押した時のアクション
   def delete_content
     @cart_content.destroy
     redirect_to current_cart
@@ -30,7 +35,7 @@ class CartsController < ApplicationController
 
   private
 
-  def setup_cart_content!
-    @cart_content = current_cart.cart_contents.find_by(product_id: params[:product_id])
-  end
+  # def setup_cart_content!
+  #   @cart_content = current_cart.cart_contents.find_by(product_id: params[:product_id])
+  # end
 end
